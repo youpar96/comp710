@@ -4,7 +4,7 @@
 // Press the 'Run' button on the top to start the web server,
 // then click the URL that is emitted to the Output tab of the console
 
-echo '<h1>Hello world from Kenneth!</h1>';
+echo '<h1>Welcome to Kenneth\'s Project</h1>';
 
 ?>
 </body>
