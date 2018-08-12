@@ -1,5 +1,8 @@
 <?php
 
+use App\Post;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,20 +18,45 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 // Lab 2
+
 Route::get('posts/welcome', function () {
     $name='Kenneth';
 	return view('posts/welcome', compact('name'));
 });
 
 Route::get('posts/viewallposts', function () { 
-    $posts=	['First Post',
-             'Second Post',
-             'Third Post'];
+    //$posts = Post::all();
+    $posts=DB::table('posts')->get();
     return view('posts/viewallposts', compact('posts'));
 });
 
-Auth::routes();
+// week 4 - Lecture
+/*
+Route::get('/welcome', 'HomeController@index');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/posts', 'PostsController@index');
+Route::get('/posts/create', 'PostsController@create');
+Route::post('/posts', 'PostsController@store');
+*/
+
+// week 4 - Lab
+Route::get('/posts', 'PostsController@index');
+Route::get('/posts/welcome', 'PostsController@index');
+
+Route::get('posts/viewallposts', function () {
+	$posts=DB::table('posts')->get();
+	return view('posts/viewallposts', compact('posts'));
+});
+
+//to add route to “create new post form”
+Route::get('posts/create', 'PostsController@create');
+//to add route to store method
+Route::post('posts/store', 'PostsController@store');
+// to add route to view displaying specific post
+Route::get('posts/viewpost/{id}/', 'PostsController@viewpost');
+
+//to add route to logout method
+Route::get('logout/', 'PostsController@logout');
+
+Auth::routes();

@@ -70,7 +70,6 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
-                        <a href="{{ route('logout') }}">Logout</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
@@ -83,6 +82,29 @@
                     Welcome to Posts Application Kenneth
                 </div>
                 
+                <br/>
+                
+                <table style="border:2px solid">
+                    <colgroup>
+                        <col width="300px">
+                        <col width="500px">
+                    </colgroup>
+                    <thead>
+                        <th>TITLE</th>
+                        <th>CONTENT</th>
+                    </thead>
+                    <tbody>
+                        @foreach( $posts as $post )
+                        <tr>
+                            <td>{{ $post->title }}</td>
+                            <td>{{ $post->body }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                
+                <br/>
+
                 <div class="links">
                     <!--<a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>

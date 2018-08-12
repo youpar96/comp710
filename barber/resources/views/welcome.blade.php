@@ -70,7 +70,6 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
-                        <a href="{{ route('logout') }}">Logout</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
@@ -80,18 +79,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Welcome to Posts Application Kenneth
+                    Laravel
                 </div>
-                
+
                 <div class="links">
-                    <!--<a href="https://laravel.com/docs">Documentation</a>
+                    <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>-->
-                    <a href="/blog/public/posts/">HOME</a>
-                    <a href="/blog/public/posts/viewallposts">VIEW ALL POSTS</a>
-                    <a href="/blog/public/posts/create">CREATE NEW POST</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>
