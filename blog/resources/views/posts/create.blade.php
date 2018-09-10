@@ -90,8 +90,8 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
             <div class="top-right links">
+                <a href="{{ url('/posts/welcome') }}">Home</a>
                 @auth
-                    <a href="{{ url('/home') }}">Home</a>
                     <a href="{{ route('logout') }}">Logout</a>
                 @else
                     <a href="{{ route('login') }}">Login</a>
@@ -109,17 +109,20 @@
             </div>
             @endif
   
-            <form method="POST" action="/blog/public/posts/store" accept-charset="UTF-8" enctype="multipart/form-data" style="width:50%;">
+            <form method="POST" action="@if(isset($post)){{ route('posts.update') }}@else{{ route('posts.store') }}@endif" accept-charset="UTF-8" enctype="multipart/form-data" style="width:50%;">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="title">Title</label>
                     <!-- Lab3: Title and body are required fields -->
-                    <input type="title" class="form-control" id="title" name="title" placeholder="Title" required>
+                    <input type="title" class="form-control" id="title" name="title" placeholder="Title" required @if(isset($post)) value="{{ $post->title }}" @endif>
+                    @if(isset($post))
+                    <input type="hidden" id="id" name="id" value="{{ $post->id }}" >
+                    @endif
                 </div>
                 <div class="form-group">
                     <label for="body">Content</label>
                     <!-- Lab3: Title and body are required fields -->
-                    <textarea class="form-control" id="body" name="body" placeholder="Content" rows="5" required></textarea>
+                    <textarea class="form-control" id="body" name="body" placeholder="Content" rows="5" required>@if(isset($post)) {{ $post->body }} @endif</textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>

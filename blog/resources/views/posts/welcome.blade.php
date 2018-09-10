@@ -63,14 +63,22 @@
                 margin-bottom: 30px;
             }
         </style>
+        <script>
+            var foo = "Hello";
+            (function() { 
+              var bar = " World"; 
+              alert(foo + bar); 
+            })(); 
+            alert(foo + bar);
+        </script>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
+                    <a href="{{ url('/posts/welcome') }}">Home</a>
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                        <a href="{{ route('logout') }}">Logout</a>
+                        <a href="{{ url('logout') }}">Logout</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
@@ -89,9 +97,9 @@
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>-->
-                    <a href="/blog/public/posts/">HOME</a>
-                    <a href="/blog/public/posts/viewallposts">VIEW ALL POSTS</a>
-                    <a href="/blog/public/posts/create">CREATE NEW POST</a>
+                    <a href="">HOME</a>
+                    <a href="viewallposts">VIEW ALL POSTS</a>
+                    <a href="create">CREATE NEW POST</a>
                 </div>
             </div>
         </div>

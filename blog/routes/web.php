@@ -15,7 +15,7 @@ use App\Post;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('posts/welcome');
 });
 
 // Lab 2
@@ -52,11 +52,15 @@ Route::get('posts/viewallposts', function () {
 //to add route to “create new post form”
 Route::get('posts/create', 'PostsController@create');
 //to add route to store method
-Route::post('posts/store', 'PostsController@store');
-// to add route to view displaying specific post
+Route::post('posts/store', 'PostsController@store')->name('posts.store');
+//to add route to view displaying specific post
 Route::get('posts/viewpost/{id}/', 'PostsController@viewpost');
+// to add route to "update form"
+Route::get('posts/update/{id}/', 'PostsController@updateForm');
+//to add route to update a selected post
+Route::post('posts/update', 'PostsController@update')->name('posts.update');
 
 //to add route to logout method
-Route::get('logout/', 'PostsController@logout');
+Route::get('logout', 'Auth\LoginController@logout');
 
 Auth::routes();
