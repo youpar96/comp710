@@ -9,28 +9,31 @@
     {{ csrf_field() }}
     <div class="form-group">
       <label for="j_fname">First Name:</label>
-      <input type="text" class="form-control" id="j_fname" name="j_fname" placeholder="This is a required field"  maxlength=30 minlength=3>
+      <input type="text" class="form-control" id="j_fname" name="j_fname" value="{{ old('j_fname') }}" placeholder="This is a required field"  maxlength=30 minlength=3>
     </div>
   <div class="form-group">
     <label for="j_sname">Surname:</label>
-    <input type="text" class="form-control" id="j_sname" name="j_sname" placeholder="This is a required field"  maxlength=30 minlength=3>
+    <input type="text" class="form-control" id="j_sname" name="j_sname" value="{{ old('j_sname') }}" placeholder="This is a required field"  maxlength=30 minlength=3>
   </div>  
   <div class="form-group">
     <label for="j_prefname">Preferred Name:</label>
-    <input type="text" class="form-control" id="j_prefname" name="j_prefname" placeholder="This is a required field"  maxlength=30 minlength=3>
+    <input type="text" class="form-control" id="j_prefname" name="j_prefname" value="{{ old('j_prefname') }}" maxlength=30 minlength=3>
   </div>  
   <div class="form-group">
     <label for="j_email">Email Address:</label>
-    <input type="text" class="form-control" id="j_email" placeholder="This is a required field" name="j_email" >
+    <input type="text" class="form-control" id="j_email" value="{{ old('j_email') }}" placeholder="This is a required field" name="j_email" >
   </div>  
   <div class="form-group">
     <label for="j_phone">Phone:</label>
-    <input type="text" class="form-control" id="j_phone" placeholder="This is a required field" name="j_phone" >
-  </div> 
-  <div class="radio">
-    <label><input type="radio" id="j_pref_cont_meth"name="j_pref_cont_meth" value="txt">Text</label>
-    <label><input type="radio" id="j_pref_cont_meth"name="j_pref_cont_meth" value="phone">Phone</label>
-    <label><input type="radio" id="j_pref_cont_meth"name="j_pref_cont_meth" value="email">Email</label>
+    <input type="text" class="form-control" id="j_phone" value="{{ old('j_phone') }}"placeholder="This is a required field" name="j_phone" >
+  </div>
+   <div class="form-group">
+    <label for="j_pref_cont_meth">Preferred Contact Method:</label>
+    <div class="radio">
+      <label><input type="radio" id="j_pref_cont_meth"name="j_pref_cont_meth" value="txt" {{ old('j_pref_cont_meth') == "" ? '' : 'checked' }} >Text</label>
+      <label><input type="radio" id="j_pref_cont_meth"name="j_pref_cont_meth" value="phone" {{ old('j_pref_cont_meth') == "" ? '' : 'checked' }} >Phone</label>
+      <label><input type="radio" id="j_pref_cont_meth"name="j_pref_cont_meth" value="email" {{ old('j_pref_cont_meth') == "" ? '' : 'checked' }}>Email</label>
+    </div>
   </div>
   
   <div class="form-group">

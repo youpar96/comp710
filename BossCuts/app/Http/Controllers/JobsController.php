@@ -35,15 +35,17 @@ class JobsController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
+        $request->flash();
         $job = $this->validate(request(), [
-            'j_fname' => 'bail|required|min:3|max:30',
-            'j_sname' => 'bail|required|min:3|max:30',
+            'j_fname' => 'required|min:3|max:30',
+            'j_sname' => 'required|min:3|max:30',
+            'j_email' => 'required|email',
+            'j_phone' => 'required|min:7|max:20',
             'j_pref_cont_meth'=> 'required|in:txt,phone,email'
         ]);
-        //dd($job);
+        //dd($request);
         Job::create($job);
-        return back()->with('success','We have received your application')->withInput();
+        return redirect('jobs/landing')->with('success','We have received your application and will contact you ...');
     }
 
     /**
