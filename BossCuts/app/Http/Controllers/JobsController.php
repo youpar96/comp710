@@ -36,16 +36,38 @@ class JobsController extends Controller
     public function store(Request $request)
     {
         $request->flash();
+        dd($request);
+        if ($request->hasFile('cvUpload'))  {
+            $request->validate([
+            'cvUpload' => 'file|max:1024',
+            ]);
+            $fileName = "fileName".time().'.'.request()->cvUpload->getClientOriginalExtension();
+        } else {
+            $fileName = null;
+        }
         $job = $this->validate(request(), [
             'j_fname' => 'required|min:3|max:30',
             'j_sname' => 'required|min:3|max:30',
             'j_email' => 'required|email',
             'j_phone' => 'required|min:7|max:20',
-            'j_pref_cont_meth'=> 'required|in:txt,phone,email'
+            'j_pref_cont_meth'=> 'required|in:txt,phone,email',
         ]);
-        //dd($request);
+        if($fileName !== null) {
+            $job['j_cvpath']  = $fileName;
+            $request->cvUpload->storeAs('jobAppl',$fileName);   
+        }
         Job::create($job);
         return redirect('jobs/landing')->with('success','We have received your application and will contact you ...');
+    }
+    public function uploadCoverLetter(Request $request){
+        $request->validate([
+        ]);
+        $fileName = "fileName".time().'.'.request()->fileToUpload->getClientOriginalExtension();
+        $request->fileToUpload->storeAs('jobAppl',$fileName);
+ 
+        return back()
+            ->with('success','You have successfully upload image. Filename');
+ 
     }
 
     /**

@@ -23,4 +23,3 @@ Auth::routes();
 Route::resource('/styles','StylesController');
 Route::resource('/jobs','JobsController');
 
-

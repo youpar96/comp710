@@ -39,7 +39,12 @@
   <div class="form-group">
     <label for="j_cover_letter">Cover Letter:</label>
     <textarea class="form-control" rows="5" id="j_cover_letter" name="j_cover_letter" maxlength=1000 ></textarea>
-  </div>  
+  </div>
+  <div class="form-group">
+    <input type="file" class="form-control-file" name="cvUpload" id="cvUpload" value="{{old('cvUpload')}}" aria-describedby="fileHelp">
+    <small id="fileHelp" class="form-text text-muted">Please upload a valid image file. Size of image should not be more than 2MB.</small>
+  </div>
+  
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
