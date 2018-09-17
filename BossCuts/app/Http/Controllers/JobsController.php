@@ -36,7 +36,18 @@ class JobsController extends Controller
     public function store(Request $request)
     {
         $request->flash();
-        dd($request);
+        $workType = $request->old('work_type');
+        $workDays = $request->old('work_days');
+        if($workType !== null) {
+            if(in_array('fulltime',$workType)) $request->session()->flash('fulltime', '1');
+            if(in_array('parttime',$workType)) $request->session()->flash('parttime', '1');
+            if(in_array('casual',$workType)) $request->session()->flash('casual', '1'); 
+        }
+        if($workDays !== null) {
+            if(in_array('weekdays',$workDays)) $request->session()->flash('weekdays', '1');
+            if(in_array('saturdays',$workDays)) $request->session()->flash('saturdays', '1');
+            if(in_array('sundays',$workDays)) $request->session()->flash('sundays', '1'); 
+        }
         if ($request->hasFile('cvUpload'))  {
             $request->validate([
             'cvUpload' => 'file|max:1024',
@@ -46,16 +57,33 @@ class JobsController extends Controller
             $fileName = null;
         }
         $job = $this->validate(request(), [
-            'j_fname' => 'required|min:3|max:30',
-            'j_sname' => 'required|min:3|max:30',
-            'j_email' => 'required|email',
-            'j_phone' => 'required|min:7|max:20',
-            'j_pref_cont_meth'=> 'required|in:txt,phone,email',
+            //'j_fname' => 'required|min:3|max:30',
+            //'j_sname' => 'required|min:3|max:30',
+            //'j_email' => 'required|email',
+            //'j_phone' => 'required|min:7|max:20',
+            //'j_pref_cont_meth'=> 'required|in:txt,phone,email',
+            'j_avail_date' => 'date',
+            'work_type' => 'required',
+            'work_days' => 'required',
+            'j_workinNZ' => 'required|in:citPR,visa,noVisa',
+            'j_issue_movement'=> 'required|in:1,0',
+            'j_issue_skin'=> 'required|in:1,0',
+            'j_issue_rsi'=> 'required|in:1,0',
         ]);
         if($fileName !== null) {
             $job['j_cvpath']  = $fileName;
             $request->cvUpload->storeAs('jobAppl',$fileName);   
         }
+        //dd($job);
+        
+        if(in_array('fulltime',$workType)) $job['j_fulltime'] = true;
+        if(in_array('parttime',$workType)) $job['j_parttime'] = true;
+        if(in_array('casual',$workType)) $job['j_casual'] = true;
+        
+        if(in_array('weekdays',$workType)) $job['j_weekdays'] = true;
+        if(in_array('saturdays',$workType)) $job['j_saturdays'] = true;
+        if(in_array('sundays',$workType)) $job['j_sundays'] = true;
+        
         Job::create($job);
         return redirect('jobs/landing')->with('success','We have received your application and will contact you ...');
     }

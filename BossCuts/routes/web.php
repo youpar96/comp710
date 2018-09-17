@@ -12,7 +12,8 @@
 */
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return view('main');
 });
 Route::get('jobs/landing', function() {
     return view('jobs.landing');
