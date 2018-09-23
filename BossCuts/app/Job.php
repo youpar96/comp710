@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+//use App\Storage;
 
 class Job extends Model
 {
@@ -14,7 +15,6 @@ class Job extends Model
         'j_phone',
         'j_pref_cont_meth',
         'j_cover_letter',
-        'j_cover_letter_path',
         'j_cvpath',
         'j_avail_date',
         'j_fulltime',
@@ -24,13 +24,21 @@ class Job extends Model
         'j_saturdays',
         'j_sundays',
         'j_workinNZ',
-        'j_work_visa_path',
-        'j_issues_movement',
-        'j_issues_skin',
-        'j_issues_RSI',
-        'j_issues_notes',
+        'j_issue_movement',
+        'j_issue_skin',
+        'j_issue_RSI',
+        'j_issue_notes',
         'j_declaration',
-        'j_signature',
         'j_status'
         ];
+        public function hasCV() {
+            return ($this->j_cvpath !== "");
+        }
+        public function getCV() {
+            if($this->hasCV()) {
+                $filename = "/app/jobAppl/" . $this->j_cvpath;
+                //return response()->download($filename);
+                return response()->download(storage_path($filename));
+            } else return "";
+        }
 }

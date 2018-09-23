@@ -14,7 +14,7 @@ class CreateJobsTable extends Migration
     public function up()
     {
         Schema::create('jobs', function (Blueprint $table) {
-            $table->increments('j_id');
+            $table->increments('id');
             $table->string('j_fname', 30);
             $table->string('j_sname', 30);
             $table->string('j_prefname', 30);
@@ -31,13 +31,11 @@ class CreateJobsTable extends Migration
             $table->boolean('j_saturdays')->default(false);
             $table->boolean('j_sundays')->default(false);
             $table->enum('j_workinNZ', ['citPR', 'visa', 'noVisa']);
-            $table->string('j_work_visa_path', 200);
-            $table->boolean('j_issues_movement');
-            $table->boolean('j_issues_skin');
-            $table->boolean('j_issues_RSI');
-            $table->string('j_issues_notes', 1000);
+            $table->boolean('j_issue_movement');
+            $table->boolean('j_issue_skin');
+            $table->boolean('j_issue_RSI');
+            $table->string('j_issue_notes', 1000);
             $table->boolean('j_declaration');
-            $table->binary('j_signature');
             $table->enum('j_status', ['new', 'read', 'contact', 'hold', 'reject']);
             $table->timestamps();
         });

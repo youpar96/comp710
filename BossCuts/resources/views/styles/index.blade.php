@@ -1,36 +1,28 @@
 @extends('layouts.app')
-
 @section('content')
-@guest
-    <h1> You are not logged in. Please go back.</h1>
-@else
-<div class="well"><h4>Boss Cuts Available Services - awaiting Diego's css Styling before I Flash it up!!!!</h4></div>    
-<div class='container'>
-    @if (\Session::has('success'))
-      <div class="alert alert-success">
-        <p>{{ \Session::get('success') }}</p>
-     </div>
-    @endif
-</div>
+<div class="site-heading-upper text-primary mb-3"><h1>Our Services</h1></div>    
+@include ('layouts.errors')
+@include ('layouts.success')
 <div class="container">
-    <div class = "row">
-        <div class = "col-md-3">Service</div>
-        <div class = "col-md-2">Price $</div>
-        <div class = "col-md-1">Time Minutes</div>
-        <div class = "col-md-6">Description</div>
+    <div class = "row section-heading">
+        <div class = "col-sm-3">Service</div>
+        <div class = "col-sm-2">Price $</div>
+        <div class = "col-sm-2">Time Minutes</div>
+        <div class = "col-sm-5">Description</div>
+        </div>
+        
     </div>
     @foreach ($styles as $style)
         <div class = "row">
             <br>
-            <div class = "col-md-3">{{$style->st_name}}</div>
-            <div class = "col-md-2">{{$style->st_cost}}</div>
-            <div class = "col-md-1">{{$style->st_duration}}</div>
-            <div class = "col-md-6">{{ str_limit($style->st_description, $limit = 50, $end = '...') }}</div>
+            <div class = "col-sm-3">{{$style->st_name}}</div>
+            <div class = "col-sm-2">{{$style->st_cost}}</div>
+            <div class = "col-sm-2">{{$style->st_duration}}</div>
+            <div class = "col-sm-5">{{$style->st_description}}</div>
         </div>
-        @endforeach
+    @endforeach
     </div>
 </div>
-@endguest
 @endsection
 </body>
 </html>

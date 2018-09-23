@@ -15,12 +15,16 @@ Route::get('/', function () {
     //return view('welcome');
     return view('main');
 });
-Route::get('jobs/landing', function() {
-    return view('jobs.landing');
-});
 
+//Auth functionality
 Auth::routes();
 
-Route::resource('/styles','StylesController');
+//Join Boss Cuts - get a job Routes
 Route::resource('/jobs','JobsController');
+Route::resource('/jobsAD','JobsADController')->middleware('is_admin');
+Route::post('/jobsAD/downloadCV/{filename}', 'JobsADController@downloadCV')->middleware('is_admin');
+
+//Styles /Cut Types Routes
+Route::resource('/styles','StylesController');
+Route::resource('/stylesAD','StylesADController')->middleware('is_admin');
 

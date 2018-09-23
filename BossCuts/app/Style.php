@@ -13,4 +13,8 @@ class Style extends Model
         'st_cost',
         'st_visibility'
         ];
+    
+    Public function scopeVisible($query) {
+        Return $query->where('st_visibility',1);
+    }
 }

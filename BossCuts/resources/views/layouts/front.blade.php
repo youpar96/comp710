@@ -20,7 +20,6 @@
     <!-- Custom styles for this template -->
     <link href="{{ secure_asset('css/business-casual.min.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/creative.min.css') }}" rel="stylesheet">
-
   </head>
 
   <body>
@@ -47,7 +46,7 @@
               <a class="nav-link text-uppercase text-expanded" href="gallery">Gallery</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="service">Service</a>
+              <a class="nav-link text-uppercase text-expanded" href="styles">Service</a>
             </li>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded js-scroll-trigger" href="#about">About</a>

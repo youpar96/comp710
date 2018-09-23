@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Job;
+use Carbon\Carbon;
 
 class JobsController extends Controller
 {
@@ -14,7 +15,7 @@ class JobsController extends Controller
      */
     public function index()
     {
-        //
+        return view('jobs.intro');
     }
 
     /**
@@ -26,8 +27,7 @@ class JobsController extends Controller
     {
         return view('jobs.create');
     }
-
-    /**
+    /*******************************************
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -36,6 +36,9 @@ class JobsController extends Controller
     public function store(Request $request)
     {
         $request->flash();
+//      dd($request->session());
+//        if ($request->has('j_fname')) dd($request->old('j_fname'));
+//        else dd("dont have first name");
         $workType = $request->old('work_type');
         $workDays = $request->old('work_days');
         if($workType !== null) {
@@ -48,54 +51,53 @@ class JobsController extends Controller
             if(in_array('saturdays',$workDays)) $request->session()->flash('saturdays', '1');
             if(in_array('sundays',$workDays)) $request->session()->flash('sundays', '1'); 
         }
-        if ($request->hasFile('cvUpload'))  {
+        
+        if ($request->hasFile('cvUpload') && $request->has('j_fname') && $request->has('j_sname')) {
             $request->validate([
-            'cvUpload' => 'file|max:1024',
+                'cvUpload' => 'file|max:1024',
             ]);
-            $fileName = "fileName".time().'.'.request()->cvUpload->getClientOriginalExtension();
+            $fileName = $request->old('j_fname')."-".$request->old('j_sname').time().'.'.request()->cvUpload->getClientOriginalExtension();
         } else {
             $fileName = null;
         }
         $job = $this->validate(request(), [
-            //'j_fname' => 'required|min:3|max:30',
-            //'j_sname' => 'required|min:3|max:30',
-            //'j_email' => 'required|email',
-            //'j_phone' => 'required|min:7|max:20',
-            //'j_pref_cont_meth'=> 'required|in:txt,phone,email',
-            'j_avail_date' => 'date',
+            'j_fname' => 'required|min:3|max:30',
+            'j_sname' => 'required|min:3|max:30',
+            'j_prefname'=> 'min:2',
+           'j_email' => 'required|email',
+            'j_phone' => 'required|min:7|max:20',
+            'j_pref_cont_meth'=> 'required|in:txt,phone,email',
+            'j_cover_letter' => 'min:2',
+//try later with multi date format    'j_avail_date' => 'date_multi_format:"d/m/Y","d-m-Y":after:Carbon::now()->subDay()',
+            'j_avail_date' => 'date:"d/m/Y"|after:Carbon::now()->subDay()',
             'work_type' => 'required',
             'work_days' => 'required',
             'j_workinNZ' => 'required|in:citPR,visa,noVisa',
-            'j_issue_movement'=> 'required|in:1,0',
-            'j_issue_skin'=> 'required|in:1,0',
-            'j_issue_rsi'=> 'required|in:1,0',
+            'j_issue_movement' => 'required|in:1,0',
+            'j_issue_skin'=> 'required',
+            'j_issue_RSI'=> 'required',
+            'j_issue_notes' => 'min:2',
+            'j_declaration' => 'required',
         ]);
         if($fileName !== null) {
             $job['j_cvpath']  = $fileName;
             $request->cvUpload->storeAs('jobAppl',$fileName);   
         }
-        //dd($job);
-        
-        if(in_array('fulltime',$workType)) $job['j_fulltime'] = true;
-        if(in_array('parttime',$workType)) $job['j_parttime'] = true;
-        if(in_array('casual',$workType)) $job['j_casual'] = true;
-        
-        if(in_array('weekdays',$workType)) $job['j_weekdays'] = true;
-        if(in_array('saturdays',$workType)) $job['j_saturdays'] = true;
-        if(in_array('sundays',$workType)) $job['j_sundays'] = true;
-        
+        if($workType !== null) {
+            if(in_array('fulltime',$workType)) $job['j_fulltime'] = true;
+            if(in_array('parttime',$workType)) $job['j_parttime'] = true;
+            if(in_array('casual',$workType)) $job['j_casual'] = true;
+        }
+        if($workDays !== null) {
+            if(in_array('weekdays',$workDays)) $job['j_weekdays'] = true;
+            if(in_array('saturdays',$workDays)) $job['j_saturdays'] = true;
+            if(in_array('sundays',$workDays)) $job['j_sundays'] = true;
+        }
+        $job['j_status'] = 'new';
+        //DD($job);
+
         Job::create($job);
-        return redirect('jobs/landing')->with('success','We have received your application and will contact you ...');
-    }
-    public function uploadCoverLetter(Request $request){
-        $request->validate([
-        ]);
-        $fileName = "fileName".time().'.'.request()->fileToUpload->getClientOriginalExtension();
-        $request->fileToUpload->storeAs('jobAppl',$fileName);
- 
-        return back()
-            ->with('success','You have successfully upload image. Filename');
- 
+        return redirect('jobs')->with('success','We have received your application and will contact you ...');
     }
 
     /**
