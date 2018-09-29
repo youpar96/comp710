@@ -16,6 +16,10 @@ Route::get('/', function () {
     return view('main');
 });
 
+Route::get('/adminHome', function () {
+    return view('admin/home');
+});
+
 //Auth functionality
 Auth::routes();
 

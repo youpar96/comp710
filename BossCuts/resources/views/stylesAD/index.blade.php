@@ -1,9 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 @include ('layouts.errors')
 @include ('layouts.success')
-<div class="container">
-    <div class="section-heading"><h1>Add Change Delete Styles of Cut</h1></div>    
+    <div class="section-heading"><h3>Add Change Delete Styles of Cut</h3></div>    
     <table class="table table-bordered table-dark table-responsive">
         <thead class="thead-light">
             <tr>
@@ -36,7 +35,6 @@
         @endforeach
     </table>
 <a href="stylesAD/create" class="btn btn-primary btn-lg">Add a New Style</a>
-</div>
 @endsection
 </body>
 </html>
