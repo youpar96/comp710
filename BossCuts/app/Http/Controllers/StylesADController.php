@@ -54,7 +54,6 @@ class StylesADController extends Controller
     public function edit($id)
     {
         $style = Style::find($id);
-        //DD($style);
         return view('stylesAD.edit', compact('style', 'id'));
     }
     /*******************************************
@@ -70,8 +69,8 @@ class StylesADController extends Controller
         $this->validate(request(), [
             'st_name' => 'bail|required|min:3|max:30',
             'st_description' => 'required|min:10|max:100',
-            'st_duration' => 'bail|required|integer',
-            'st_cost' => 'bail|required|regex:/^\d*(\.\d{1,2})?$/',
+            'st_duration' => 'required|integer',
+            'st_cost' => 'required|regex:/^\d*(\.\d{1,2})?$/',
         ]);
         $style->st_name = $request->get('st_name');
         $style->st_description = $request->get('st_description');
@@ -88,10 +87,9 @@ class StylesADController extends Controller
      */
     public function destroy($id)
     {
-        //DD("Got to delete");
         $style = Style::find($id);
         $style->st_visibility = 0;
         $style->save();
-        return redirect('stylesAD')->with('success', 'Post was deleted successfully');
+        return redirect('stylesAD')->with('success', 'Style was deleted successfully');
     }
 }

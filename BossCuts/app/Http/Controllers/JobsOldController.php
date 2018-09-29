@@ -60,10 +60,10 @@ class JobsController extends Controller
         } else {
             $fileName = null;
         }
-        $rules = [
+        $job = $this->validate(request(), [
             'j_fname' => 'required|min:3|max:30',
             'j_sname' => 'required|min:3|max:30',
-            'j_prefname'=> 'nullable',
+            'j_prefname'=> 'min:2',
            'j_email' => 'required|email',
             'j_phone' => 'required|min:7|max:20',
             'j_pref_cont_meth'=> 'required|in:txt,phone,email',
@@ -75,29 +75,10 @@ class JobsController extends Controller
             'j_workinNZ' => 'required|in:citPR,visa,noVisa',
             'j_issue_movement' => 'required|in:1,0',
             'j_issue_skin'=> 'required',
-            'j_issue_RSI'=> 'nullable',
-            'j_issue_notes' => 'nullable',
-            'j_declaration' => 'required'
-        ];
-        $customMessages = [
-            'j_fname.required' => 'Please enter first name, it is required',
-            'j_sname.required' => 'Please enter surname, it is required',
-           'j_email.required' => 'Please enter email address, it is required',
-            'j_phone.required' => 'Please enter phone number, it is required',
-            'j_pref_cont_meth.required'=> 'Please select preferred contact method , it is required',
-            'j_cover_letter.required' => 'Please enter some information in the tell us about you',
-//try later with multi date format    'j_avail_date' => 'date_multi_format:"d/m/Y","d-m-Y":after:Carbon::now()->subDay()',
-            'j_avail_date.required' => 'Please enter when you are avilable to start, it is required',
-            'work_type.required' => 'Please select at least one of part time, fulltime or casual, it is required',
-            'work_days.required' => 'Please select at least one of weekdays, Saturdays, Sundays , it is required',
-            'j_workinNZ.required' => 'Please select your eligibility to work in NZ, it is required',
-            'j_issue_movement.required' => 'Please answer the question regarding movement issues , it is required',
-            'j_issue_skin.required'=> 'Please answer the question regarding skin issues , it is required',
-            'j_issue_RSI.required'=> 'Please answer the question regarding injuries/medical conditions , it is required',
-            'j_declaration.required' => 'Please tick the declaration , it is required',
-        ];
-        
-        $job = $this->validate($request, $rules, $customMessages);
+            'j_issue_RSI'=> 'required',
+            'j_issue_notes' => 'min:2',
+            'j_declaration' => 'required',
+        ]);
         if($fileName !== null) {
             $job['j_cvpath']  = $fileName;
             $request->cvUpload->storeAs('jobAppl',$fileName);   

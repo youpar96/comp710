@@ -1,28 +1,40 @@
-@extends('layouts.app')
+@extends('layouts.front')
 @section('content')
 <div class="site-heading-upper text-primary mb-3"><h1>Our Services</h1></div>    
 @include ('layouts.errors')
 @include ('layouts.success')
 <div class="container">
-    <div class = "row section-heading">
-        <div class = "col-sm-3">Service</div>
-        <div class = "col-sm-2">Price $</div>
-        <div class = "col-sm-2">Time Minutes</div>
-        <div class = "col-sm-5">Description</div>
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <table class="table table-sm table-bordered table-striped table-responsive">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope = "col">Service</th>
+                        <th scope = "col">Price $</th>
+                        <th scope = "col">Description</th>
+                    </tr>   
+                </thead>
+                <tbody>
+                    @foreach ($styles as $style)
+                        <tr>
+                            <th scope="row">{{$style->st_name}}</th>
+                            <td>{{$style->st_cost}}</td>
+                            <td>{{$style->st_description}}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
-        
-    </div>
-    @foreach ($styles as $style)
-        <div class = "row">
-            <br>
-            <div class = "col-sm-3">{{$style->st_name}}</div>
-            <div class = "col-sm-2">{{$style->st_cost}}</div>
-            <div class = "col-sm-2">{{$style->st_duration}}</div>
-            <div class = "col-sm-5">{{$style->st_description}}</div>
+        <div class="col-6 col-md-8">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{ secure_asset('img/boss_about.jpg') }}" alt="">
         </div>
-    @endforeach
     </div>
+    
 </div>
+<div class="container">
+
+</div>
+
 @endsection
 </body>
 </html>

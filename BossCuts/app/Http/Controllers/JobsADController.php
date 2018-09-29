@@ -25,11 +25,12 @@ class JobsADController extends Controller
      */
     public function show($id) {
         $job = Job::find($id);
- //     $carbon = new Carbon();
-//      return view('jobs.show', compact('job','id','carbon'));
+        if($job->j_status=="new") {
+            //change status to read and save it
+            $job->j_status = "read";
+            $job->save();
+        }
         return view('jobs.show', compact('job','id'));
-
-        //DD("Got here");
     }
     /******************* edit **********************************
      * Show the form for editing the specified Job Application.
@@ -37,8 +38,11 @@ class JobsADController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
-        //
+    public function statusChange(Request $request, $id) {
+        $job = Job::find($id);
+        $job->j_status = $request->input('newStatus');
+        $job->save();
+        return view('jobs.show', compact('job','id'));
     }
     /*********************
      * Update the specified Job Application in storage.

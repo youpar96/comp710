@@ -1,9 +1,11 @@
 @extends('layouts.app')
 @section('content')
-<div class="well"><h1>Detailed Applicant Listing</h1></div>
+<div class="well well-lg">
+  Detailed Applicant Listing
+</div>
 @include ('layouts.errors')
 @include ('layouts.success')
-<div class="container">
+<div class="container-fluid">
   <!-------------------------------------------- Names --------------------------------------->
   <div class="row">
     <div class = "col-md-2">Name:</div>
@@ -39,10 +41,31 @@
       </div>
     @else
       <div class="row">
-          No CV
+          Applicant has not uploaded a CV
       </div>
     @endif
   </div>
-
+  <div class="row">
+    <div class = "col-md-2">Status:</div>
+    <div class = "col-md-10">{{$job->j_status}}</div>
+  </div>
+  <h1>Change Applicant's Status</h1>
+  <form action="{{ action('JobsADController@statusChange',$job['id']) }} "method="post" >
+    {{csrf_field()}}
+    <input name="_method" type="hidden" value="post">
+    <input name="newStatus" type = "hidden" value='contact'>
+    <button class="btn btn-primary btn-sm" type="submit">Contact</button>
+  </form>
+  <form action="{{ action('JobsADController@statusChange',$job['id']) }} "method="post" >
+    {{csrf_field()}}
+    <input name="_method" type="hidden" value="post">
+    <input name="newStatus" type = "hidden" value='hold'>
+    <button class="btn btn-primary btn-sm" type="submit">Hold</button>
+  </form><form action="{{ action('JobsADController@statusChange',$job['id']) }} "method="post" >
+    {{csrf_field()}}
+    <input name="_method" type="hidden" value="post">
+    <input name="newStatus" type = "hidden" value='reject'>
+    <button class="btn btn-primary btn-sm" type="submit">Reject</button>
+  </form>
 </div>
 @endsection

@@ -1,8 +1,8 @@
 body {
     color: rgb(255,192,0);
+    
 }
 
-.table-heading {
-    font-size: 28px !important;
-    color: rgb(102, 255, 51);
+.font-size-18px {
+    font-size: 8px !important;
 }

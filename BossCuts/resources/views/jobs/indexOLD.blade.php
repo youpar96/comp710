@@ -23,7 +23,11 @@
             <td>{{$job->j_pref_cont_meth}}</td>
             <td>{{$job->j_status}}</td>
             <td>
-                <a href="jobsAD/{{$job->id}}" class="btn btn-primary btn-sm">View Detail</a>
+               <form action="{{action('JobsADController@show',$job['id'])}}" method="get" >
+                    {{csrf_field()}}
+                    <!--<input name="_method" type="hidden" value="GET">-->
+                    <button class='btn btn-primary btn-sm' type="submit">View Detail</button>
+                </form>
             </td>
         </tr>
     @endforeach
