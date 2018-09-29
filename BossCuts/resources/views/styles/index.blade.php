@@ -5,7 +5,7 @@
 @include ('layouts.success')
 <div class="container">
     <div class="row">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-5">
             <table class="table table-sm table-bordered table-striped table-responsive">
                 <thead class="thead-dark">
                     <tr>
@@ -25,7 +25,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-6 col-md-8">
+        <div class="col-6 col-md-7">
             <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{ secure_asset('img/boss_about.jpg') }}" alt="">
         </div>
     </div>

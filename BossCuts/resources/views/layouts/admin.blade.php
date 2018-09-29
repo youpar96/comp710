@@ -23,24 +23,77 @@
 <body>
     <!---------------side Nav Bar--------------------->
     <div id="mySidenav" class="sidenav navbar-dark navbar-expand-lg">
-        <a href="#"></a>
+        <a href="/adminHome">Admin Home</a>
         <a href="#">Booking</a>
         <a href="#">Calendar</a>
         <a href="#">Staff</a>
         <a href="/stylesAD">Styles</a>
         <a href="/jobsAD">Jobs</a>
+        <a href="/">Public Site</a>
+
     </div>
-    <div class="main">
-        <h1 class="site-heading text-center text-black d-none d-lg-block">
-            <span class="site-heading-upper"><b>BOSS CUTS - Administration</b></span>
-        </h1>
+    
+    <!-- Everything inside the div class "main" is pushed to the right of the nav bar  -->
+        <div class="main">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                       @guest
+                       
+                        <!-- This part is used to login at the start of the day-->
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
+            </nav>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="jumbotron">
+                <h1 class="display-4">BOSS CUTS - Administration</h1>
+        </div>
+
         <!-- start content area -->
         @yield("content")
         <footer class="footer text-faded text-center py-5">
         <div class="container">
             <p class="m-0 small">Copyright &copy; BossCuts 2018</p>
         </div>
-    </footer>
+        </footer>
         <!-- end content area -->
     </div>
     

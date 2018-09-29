@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 <div class="section-heading"><h1>Job Applications</h1></div>    
 @include ('layouts.errors')
 @include ('layouts.success')
-<table class="table table-bordered table-dark table-responsive">
-    <thead class="thead-light">
+<table class="table table-bordered table-light table-responsive">
+    <thead class="thead-dark">
         <tr>
             <th scope = "col">Name</div>
             <th scope = "col">Email</div>

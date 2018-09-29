@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 
 <div class="well"><h1>Edit an Existing Style</h1></div>
@@ -38,7 +38,9 @@
       <input type="text" class="form-control" id="st_cost" value="{{$style->st_cost }}" placeholder="Cost" name="st_cost" >
     </div>
   </div> 
+  <hr>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<hr>
 </div>
 @endsection
