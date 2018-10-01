@@ -50,10 +50,10 @@
               <a class="nav-link text-uppercase text-expanded" href="styles">Service</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded js-scroll-trigger" href="#about">About</a>
+              <a class="nav-link text-uppercase text-expanded js-scroll-trigger" href="/#about">About</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded js-scroll-trigger" href="#contact">Contact</a>
+              <a class="nav-link text-uppercase text-expanded js-scroll-trigger" href="/#contact">Contact</a>
             </li>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="jobs">Work Here</a>

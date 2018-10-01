@@ -26,6 +26,7 @@ Auth::routes();
 //Join Boss Cuts - get a job Routes
 Route::resource('/jobs','JobsController');
 Route::resource('/jobsAD','JobsADController')->middleware('is_admin');
+Route::get('/jobsAD/filter/{filter}','JobsADController@filter')->middleware('is_admin');
 Route::post('downloadCV/{filename}', 'JobsADController@downloadCV')->middleware('is_admin');
 Route::post('statusChange/{id}', 'JobsADController@statusChange')->middleware('is_admin');
 

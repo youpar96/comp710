@@ -20,8 +20,8 @@
       </div>
     </section>
 
-    <section class="page-section cta">
-      <div class="container">
+    <section class="page-section">
+      <div class="container cta">
         <div class="row">
           <div class="col-xl-9 mx-auto">
             <div class="cta-inner text-center rounded">
@@ -114,30 +114,31 @@
     </section>
     
     <!-- Map -->
-    <section class="page-section cta" id="contact">
-      <div class="container">
+    <section class="page-section" id="contact">
+      <div class="container cta pb-0">
+        <div class="row pb-4">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-lower">Let's Get In Touch!</span>
+              </h2>
+              <p class="mb-0">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+              <br/>
+              <div class="col-lg-4 ml-auto text-center" style="float:left;display:inline-block">
+                <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
+                <p>07-844-6874</p>
+              </div>
+              <div class="col-lg-4 mr-auto text-center" style="float:right;display:inline-block">
+                <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
+                <p>
+                  <a href="mailto:bosscutsnz@gmail.com">bosscutsnz@gmail.com</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="row">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1115.1267554296253!2d175.27815310780954!3d-37.765314111822946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d6d1884f6c5c635%3A0xa39934df5e809998!2sBoss+Cuts+Barber+Shop!5e0!3m2!1sen!2snz!4v1538307399979" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-        <br/>
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
-            <hr class="my-4">
-            <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-            <p>07-844-6874</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
-            <p>
-              <a href="mailto:bosscutsnz@gmail.com">bosscutsnz@gmail.com</a>
-            </p>
-          </div>
         </div>
       </div>
     </section>

@@ -5,14 +5,16 @@
 	<link rel="icon" type="image/png" href="{{ secure_asset('admin/img/favicon.ico') }}">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Light Bootstrap Dashboard by Creative Tim</title>
+	<title>BossCuts</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
 
     <!-- Bootstrap core CSS     -->
-    <link href="{{ secure_asset('admin/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ secure_asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    
+    <!-- <link href=" secure_asset('admin/css/bootstrap.min.css') " rel="stylesheet" />  -->
 
     <!-- Animation library for notifications   -->
     <link href="{{ secure_asset('admin/css/animate.min.css') }}" rel="stylesheet"/>
@@ -23,11 +25,12 @@
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="{{ secure_asset('admin/css/demo.css') }}" rel="stylesheet" />
+    <link href="{{ secure_asset('css/custom.css') }}" rel="stylesheet" />
 
 
     <!--     Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{{ secure_asset('admin/css/pe-icon-7-stroke.css') }}" rel="stylesheet" />
 
 </head>
@@ -49,44 +52,44 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
+                <li class="home active">
                     <a href="/admin/home">
                         <i class="pe-7s-home"></i>
                         <p>Home</p>
                     </a>
                 </li>
-                <li>
+                <li class="booking">
                     <a href="/admin/booking">
                         <i class="pe-7s-note2"></i>
                         <p>Booking</p>
                     </a>
                 </li>
-                <li>
+                <li class="calendar">
                     <a href="/admin/calendar">
                         <i class="pe-7s-note2"></i>
                         <p>Calendar</p>
                     </a>
                 </li>
-                <li>
+                <li class="staff">
                     <a href="/admin/staff">
                         <i class="pe-7s-user"></i>
                         <p>Staff</p>
                     </a>
                 </li>
-                <li>
+                <li class="gallery">
                     <a href="/admin/gallery">
                         <i class="pe-7s-album"></i>
                         <p>Gallery</p>
                     </a>
                 </li>
-                <li>
-                    <a href="/admin/style">
+                <li class="style">
+                    <a href="/stylesAD">
                         <i class="pe-7s-news-paper"></i>
                         <p>Style</p>
                     </a>
                 </li>
-                <li>
-                    <a href="/admin/application">
+                <li class="application">
+                    <a href="/jobsAD">
                         <i class="pe-7s-bell"></i>
                         <p>Application</p>
                     </a>
@@ -99,7 +102,7 @@
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/adminHome" id="navText">Home</a>
+                    <a class="navbar-brand" href="/adminHome" id="navText" style="text-transform:uppercase;">Home</a>
                 </div>
             </div>
         </nav>
@@ -159,16 +162,21 @@
 	<script src="{{ secure_asset('admin/js/light-bootstrap-dashboard.js?v=1.4.0') }}"></script>
 
 	<script type="text/javascript">
-    	/* notification
     	$(document).ready(function(){
-        	$.notify({
+    	    var curUrl = $(location).attr("href");
+    	    var category = curUrl.substring(curUrl.lastIndexOf("/", curUrl) + 1, curUrl.length);
+    	    $(".nav > li").removeClass("active");
+    	    $("." + category).addClass("active");
+    	    $("#navText").html(category);
+    	    
+        	/*$.notify({
             	icon: 'pe-7s-gift',
             	message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
             },{
                 type: 'info',
                 timer: 4000
-            });
-    	});*/
+            });*/
+    	});
 	</script>
 
 </html>

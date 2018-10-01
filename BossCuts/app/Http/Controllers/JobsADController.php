@@ -14,8 +14,18 @@ class JobsADController extends Controller
      */
     public function index() {
         $jobs = Job::latest()->get();
+        $filter = 'all';
         //DD($jobs);
-        return view('jobs.index', compact('jobs'));
+        return view('jobs.index', compact('jobs', 'filter'));
+    }
+    /******************** filter *************************
+     * Display a listing of the Job Applications based on a filter variable
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function filter($filter) {
+        $jobs = Job::latest()->filter($filter)->get();
+        return view('jobs.index', compact('jobs', 'filter'));
     }
     /****************** show ********************************
      * Display the specified Job Application.
@@ -32,7 +42,7 @@ class JobsADController extends Controller
         }
         return view('jobs.show', compact('job','id'));
     }
-    /******************* edit **********************************
+    /******************* status change **********************************
      * Show the form for editing the specified Job Application.
      *
      * @param  int  $id
@@ -45,16 +55,6 @@ class JobsADController extends Controller
         return view('jobs.show', compact('job','id'));
     }
     /*********************
-     * Update the specified Job Application in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id) {
-        //
-    }
-     /*********************
      * Download CV the specified Job Application in storage.
      *
      * @param  \Illuminate\Http\Request  $request

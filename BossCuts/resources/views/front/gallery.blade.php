@@ -11,61 +11,16 @@
       </div>
     </div>
     <div class="row">
+      @foreach( $images as $image )
       <div class="col-md-4 col-sm-6 portfolio-item">
         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-          <img class="img-fluid" src="https://blackrockdigital.github.io/startbootstrap-agency/img/portfolio/01-thumbnail.jpg" alt="">
+          <img class="img-fluid" src="{{ secure_asset('$image -> img_path') }}" alt="">
         </a>
-        <div class="portfolio-caption">
+        <!--<div class="portfolio-caption">
           <p class="text-muted">Illustration</p>
-        </div>
+        </div>-->
       </div>
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-          <img class="img-fluid" src="https://blackrockdigital.github.io/startbootstrap-agency/img/portfolio/01-thumbnail.jpg" alt="">
-        </a>
-        <div class="portfolio-caption">
-          <p class="text-muted">Illustration</p>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-          <img class="img-fluid" src="https://blackrockdigital.github.io/startbootstrap-agency/img/portfolio/01-thumbnail.jpg" alt="">
-        </a>
-        <div class="portfolio-caption">
-          <p class="text-muted">Illustration</p>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-          <img class="img-fluid" src="https://blackrockdigital.github.io/startbootstrap-agency/img/portfolio/01-thumbnail.jpg" alt="">
-        </a>
-        <div class="portfolio-caption">
-          <p class="text-muted">Illustration</p>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-          <img class="img-fluid" src="https://blackrockdigital.github.io/startbootstrap-agency/img/portfolio/01-thumbnail.jpg" alt="">
-        </a>
-        <div class="portfolio-caption">
-          <p class="text-muted">Illustration</p>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-          <img class="img-fluid" src="https://blackrockdigital.github.io/startbootstrap-agency/img/portfolio/01-thumbnail.jpg" alt="">
-        </a>
-        <div class="portfolio-caption">
-          <p class="text-muted">Illustration</p>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-          <img class="img-fluid" src="https://blackrockdigital.github.io/startbootstrap-agency/img/portfolio/01-thumbnail.jpg" alt="">
-        </a>
-        <div class="portfolio-caption">
-          <p class="text-muted">Illustration</p>
-        </div>
+      @endforeach
       </div>
     </div>
   </div>

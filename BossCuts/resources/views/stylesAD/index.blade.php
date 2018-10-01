@@ -21,12 +21,18 @@
                 <td>{{$style->st_description}}</td>
                 <td>
                     <div class="d-inline">
-                        <a href="stylesAD/{{ $style['id'] }}/edit" class="btn btn-primary btn-xs">Edit</a>
+                        <a href="stylesAD/{{ $style['id'] }}/edit" class="btn btn-primary btn-xs">
+                            <i class="pe-7s-edit"></i>
+                            Edit
+                        </a>
                     </div>
                     <div class="d-inline">
                     <form class="d-inline"  action="{{url('stylesAD',$style['id'])}} "method="post" >
                         {{csrf_field()}} <input name="_method" type="hidden" value="DELETE">
-                        <button class="d-inline btn btn-danger btn-xs" type="submit">Delete</button>
+                        <button class="d-inline btn btn-danger btn-xs" type="submit">
+                            <i class="pe-7s-trash"></i>
+                            Delete
+                        </button>
                     </form>
                     </div>
                 </td>

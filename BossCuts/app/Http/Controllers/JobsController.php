@@ -37,8 +37,8 @@ class JobsController extends Controller
     {
         $request->flash();
 //      dd($request->session());
-//        if ($request->has('j_fname')) dd($request->old('j_fname'));
-//        else dd("dont have first name");
+        if ($request->has('j_avail_date')) dd($request->old('j_avail_date'));
+        else dd("dont have availdate");
         $workType = $request->old('work_type');
         $workDays = $request->old('work_days');
         if($workType !== null) {

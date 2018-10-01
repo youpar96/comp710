@@ -1,8 +1,26 @@
 @extends('layouts.admin')
 @section('content')
-<div class="section-heading"><h1>Job Applications</h1></div>    
+<div class="section-heading">
+        <h1>Job Applications</h1>
+</div>
+
 @include ('layouts.errors')
 @include ('layouts.success')
+
+<!-- <div class="row justify-content-end">  -->
+
+<div class="row">
+    <div class = "col-auto ml-auto">
+        Status Filters<i class="fa fa-filter" ></i>
+        <a href="/jobsAD/filter/{{ 'new' }}" class="btn btn-primary btn-xs {{ $filter == 'new'? 'active' : '' }}">New</a>
+        <a href="/jobsAD/filter/{{ 'read' }}" class="btn btn-primary btn-xs {{ $filter == 'read'? 'active' : '' }}">Read</a>
+        <a href="/jobsAD/filter/{{ 'contact' }}" class="btn btn-primary btn-xs {{ $filter == 'contact'? 'active' : '' }}">Contact</a>
+        <a href="/jobsAD/filter/{{ 'hold' }}" class="btn btn-primary btn-xs {{ $filter == 'hold'? 'active' : '' }}">Hold</a>
+        <a href="/jobsAD/filter/{{ 'reject' }}" class="btn btn-primary btn-xs {{ $filter == 'reject'? 'active' : '' }}">Reject</a>
+        <a href="/jobsAD" class="btn btn-primary btn-xs {{ $filter == 'all'? 'active' : '' }}">Show All</a>
+    </div>
+</div>
+
 <table class="table table-bordered table-light table-responsive">
     <thead class="thead-dark">
         <tr>
@@ -23,7 +41,7 @@
             <td>{{$job->j_pref_cont_meth}}</td>
             <td>{{$job->j_status}}</td>
             <td>
-                <a href="jobsAD/{{$job->id}}" class="btn btn-primary btn-sm">View Detail</a>
+                <a href="/jobsAD/{{$job->id}}" class="btn btn-primary btn-sm">View Detail</a>
             </td>
         </tr>
     @endforeach
