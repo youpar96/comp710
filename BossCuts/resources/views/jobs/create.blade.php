@@ -82,7 +82,7 @@
   <div class="form-group row">
     <label for="j_avail_date" class="col-sm-4">Date your could start work:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="j_avail_date" value="{{ old('j_avail_date') }}" name="j_avail_date" >
+      <input type="text" class="form-control" id="j_avail_date" value="{{ old('j_avail_date') }}" name="j_avail_date" placeholder="dd/mm/yyyy">
     </div>
   </div>
 <!-------------------------------------------- Type, Days ------------------------------------------------>

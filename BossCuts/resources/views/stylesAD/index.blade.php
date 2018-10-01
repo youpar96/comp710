@@ -34,7 +34,6 @@
         @endforeach
     </table>
 <a href="stylesAD/create" class="btn btn-primary btn-lg">Add a New Style</a>
-<hr>
 @endsection
 </body>
 </html>

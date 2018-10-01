@@ -131,5 +131,4 @@
     <p>For those applicants who you wish to reject, select 'reject'.</p>
   </div>
 </div>
-<hr>
 @endsection

@@ -17,7 +17,7 @@ class CreateJobsTable extends Migration
             $table->increments('id');
             $table->string('j_fname', 30);
             $table->string('j_sname', 30);
-            $table->string('j_prefname', 30);
+            $table->string('j_prefname', 30)->nullable();
             $table->string('j_email', 200);
             $table->string('j_phone', 20);
             $table->enum('j_pref_cont_meth', ['txt','phone','email']);
@@ -34,7 +34,7 @@ class CreateJobsTable extends Migration
             $table->boolean('j_issue_movement');
             $table->boolean('j_issue_skin');
             $table->boolean('j_issue_RSI');
-            $table->string('j_issue_notes', 1000);
+            $table->string('j_issue_notes', 1000)->nullable();
             $table->boolean('j_declaration');
             $table->enum('j_status', ['new', 'read', 'contact', 'hold', 'reject']);
             $table->timestamps();

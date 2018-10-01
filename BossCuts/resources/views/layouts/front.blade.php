@@ -20,7 +20,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ secure_asset('css/business-casual.min.css') }}" rel="stylesheet">
-    <link href="{{ secure_asset('css/creative.min.css') }}" rel="stylesheet">
+    <!--<link href="{{ secure_asset('css/creative.min.css') }}" rel="stylesheet">-->
   </head>
 
   <body>
@@ -56,7 +56,7 @@
               <a class="nav-link text-uppercase text-expanded js-scroll-trigger" href="#contact">Contact</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="jobs">Work</a>
+              <a class="nav-link text-uppercase text-expanded" href="jobs">Work Here</a>
             </li>            
           </ul>
         </div>
@@ -67,7 +67,7 @@
     @yield("content")
 <!-- end content area -->
     
-    <footer class="footer text-faded text-center py-5">
+    <footer class="footer text-faded text-center py-3">
       <div class="container">
         <p class="m-0 small">Copyright &copy; BossCuts 2018</p>
       </div>

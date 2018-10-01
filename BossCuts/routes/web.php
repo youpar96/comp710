@@ -10,14 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/************************************
+ *              FRONT               *
+ ************************************/
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
     //return view('welcome');
     return view('main');
-});
-
-Route::get('/adminHome', function () {
-    return view('admin/home');
 });
 
 //Auth functionality
@@ -36,6 +36,15 @@ Route::resource('stylesAD','StylesADController')->middleware('is_admin');
 
 
 // Kenneth
-Route::resource('/gallery', 'ImageController');
-Route::resource('/admin/gallery', 'ImageController@indexForAdmin');
+Route::get('/gallery', 'ImageController@index');
+
+
+/************************************
+ *              ADMIN               *
+ ************************************/
+Route::get('/admin/home', function () {
+    return view('admin/home');
+});
+
+Route::get('/admin/gallery', 'ImageController@indexForAdmin');
 

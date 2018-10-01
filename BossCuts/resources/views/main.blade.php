@@ -4,8 +4,8 @@
     <section class="page-section clearfix">
       <div class="container">
         <div class="intro">
-          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{ secure_asset('img/boss_intro.jpg') }}" alt="">
-          <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{ secure_asset('img/boss_intro2.jpg') }}" alt="">
+          <div class="intro-text left-0 text-center bg-faded p-5 rounded" style="margin-top:20rem;">
             <h2 class="section-heading mb-4">
               <span class="section-heading-upper">Fresh Coffee</span>
               <span class="section-heading-lower">Worth Services</span>
@@ -38,7 +38,7 @@
     
     <section class="page-section about-heading" id="about">
       <div class="container">
-        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/boss_about.jpg" alt="">
+        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/boss_about.png" alt="" style="width:100%;">
         <div class="about-heading-content">
           <div class="row">
             <div class="col-xl-9 col-lg-10 mx-auto">
@@ -65,39 +65,39 @@
               </h2>
               <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
                 <li class="list-unstyled-item list-hours-item d-flex">
-                  Sunday
-                  <span class="ml-auto">Closed</span>
-                </li>
-                <li class="list-unstyled-item list-hours-item d-flex">
                   Monday
-                  <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                  <span class="ml-auto">9:00 AM to 5:00 PM</span>
                 </li>
                 <li class="list-unstyled-item list-hours-item d-flex">
                   Tuesday
-                  <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                  <span class="ml-auto">9:00 AM to 5:00 PM</span>
                 </li>
                 <li class="list-unstyled-item list-hours-item d-flex">
                   Wednesday
-                  <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                  <span class="ml-auto">9:00 AM to 5:00 PM</span>
                 </li>
                 <li class="list-unstyled-item list-hours-item d-flex">
                   Thursday
-                  <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                  <span class="ml-auto">9:00 AM to 5:00 PM</span>
                 </li>
                 <li class="list-unstyled-item list-hours-item d-flex">
                   Friday
-                  <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                  <span class="ml-auto">9:00 AM to 5:00 PM</span>
                 </li>
                 <li class="list-unstyled-item list-hours-item d-flex">
                   Saturday
+                  <span class="ml-auto">8:30 AM to 5:00 PM</span>
+                </li>
+                <li class="list-unstyled-item list-hours-item d-flex">
+                  Sunday
                   <span class="ml-auto">9:00 AM to 5:00 PM</span>
                 </li>
               </ul>
               <p class="address mb-5">
                 <em>
-                  <strong>1116 Orchard Street</strong>
+                  <strong>174 Clarkin Road</strong>
                   <br>
-                  Golden Valley, Minnesota
+                  Fairfield, Hamilton 3214
                 </em>
               </p>
               <p class="mb-0">
@@ -105,7 +105,7 @@
                   <em>Call Anytime</em>
                 </small>
                 <br>
-                (317) 585-8468
+                07-844-6874
               </p>
             </div>
           </div>
@@ -113,8 +113,13 @@
       </div>
     </section>
     
+    <!-- Map -->
     <section class="page-section cta" id="contact">
       <div class="container">
+        <div class="row">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1115.1267554296253!2d175.27815310780954!3d-37.765314111822946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d6d1884f6c5c635%3A0xa39934df5e809998!2sBoss+Cuts+Barber+Shop!5e0!3m2!1sen!2snz!4v1538307399979" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <br/>
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading">Let's Get In Touch!</h2>
@@ -125,12 +130,12 @@
         <div class="row">
           <div class="col-lg-4 ml-auto text-center">
             <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-            <p>123-456-6789</p>
+            <p>07-844-6874</p>
           </div>
           <div class="col-lg-4 mr-auto text-center">
             <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
             <p>
-              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+              <a href="mailto:bosscutsnz@gmail.com">bosscutsnz@gmail.com</a>
             </p>
           </div>
         </div>

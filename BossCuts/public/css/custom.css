@@ -36,6 +36,10 @@ body {
 .main {
     margin-left: 200px; /* Same as the width of the sidenav */
 }
+.jumbo-short {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}

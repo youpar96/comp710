@@ -41,4 +41,7 @@ class Job extends Model
                 return response()->download(storage_path($filename));
             } else return "";
         }
+        Public function scopeFilter($query, $filter) {
+        Return $query->where('j_status',$filter);
+    }
 }
