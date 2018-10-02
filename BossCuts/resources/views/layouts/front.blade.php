@@ -38,26 +38,27 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav mx-auto">
-            <li class="nav-item active px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="/">Home
-                <span class="sr-only">(current)</span>
-              </a>
+            <li class="nav-item px-lg-4 home">
+              <a class="nav-link text-uppercase text-expanded" href="/">Home</a>
             </li>
-            <li class="nav-item px-lg-4">
+            <li class="nav-item px-lg-4 gallery">
               <a class="nav-link text-uppercase text-expanded" href="gallery">Gallery</a>
             </li>
-            <li class="nav-item px-lg-4">
+            <li class="nav-item px-lg-4 service">
               <a class="nav-link text-uppercase text-expanded" href="styles">Service</a>
             </li>
-            <li class="nav-item px-lg-4">
+            <li class="nav-item px-lg-4 about">
               <a class="nav-link text-uppercase text-expanded js-scroll-trigger" href="/#about">About</a>
             </li>
-            <li class="nav-item px-lg-4">
+            <li class="nav-item px-lg-4 contact">
               <a class="nav-link text-uppercase text-expanded js-scroll-trigger" href="/#contact">Contact</a>
             </li>
-            <li class="nav-item px-lg-4">
+            <li class="nav-item px-lg-4 jobs">
               <a class="nav-link text-uppercase text-expanded" href="jobs">Work Here</a>
-            </li>            
+            </li>
+            <li class="nav-item px-lg-4 admin">
+              <a class="nav-link text-uppercase text-expanded" href="/admin/home">Admin</a>
+            </li>  
           </ul>
         </div>
       </div>
@@ -82,6 +83,17 @@
     
     <!-- Custom scripts for this template -->
     <script src="{{ secure_asset('js/creative.min.js') }}"></script>
+    
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    	    var curUrl = $(location).attr("href");
+    	    var category = curUrl.substring(curUrl.lastIndexOf("/", curUrl) + 1, curUrl.length);
+    	    $(".nav-item").removeClass("active");
+    	    
+    	    if(category == "" || category == null)  $(".home").addClass("active");
+    	    else  $("." + category).addClass("active");
+    	});
+    </script>
 
   </body>
 

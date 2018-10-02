@@ -7,10 +7,11 @@
           <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{ secure_asset('img/boss_intro2.jpg') }}" alt="">
           <div class="intro-text left-0 text-center bg-faded p-5 rounded" style="margin-top:20rem;">
             <h2 class="section-heading mb-4">
-              <span class="section-heading-upper">Fresh Coffee</span>
-              <span class="section-heading-lower">Worth Services</span>
+              <span class="section-heading-upper">Barber Shop</span>
+              <span class="section-heading-lower">The Best Barber Shop in Hamilton</span>
             </h2>
-            <p class="mb-3">Every cup of our quality artisan coffee starts with locally sourced, hand picked ingredients. Once you try it, our coffee will be a blissful addition to your everyday morning routine - we guarantee it!
+            <p class="mb-3">Premium Men’s Hair Cutting Studio based in Hamilton. We pride ourselves on our work and tailor make our cuts to our clients needs. For premium result, at our barbershop we combine modern techniques with traditional ones. 
+            <br/><br/>Bespoke Barbers by appointment only.
             </p>
             <div class="intro-button mx-auto">
               <a class="btn btn-primary btn-xl" href="#">Make Appointment</a>

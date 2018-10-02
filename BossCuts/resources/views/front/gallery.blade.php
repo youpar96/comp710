@@ -12,17 +12,49 @@
     </div>
     <div class="row">
       @foreach( $images as $image )
+        @if ($image->img_visible)
       <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-          <img class="img-fluid" src="{{ secure_asset('$image -> img_path') }}" alt="">
+        <a class="portfolio-link" data-toggle="modal" href="#originalImageModal" onclick="javascript:setImage('{{ secure_asset($image -> img_path) }}');">
+          <img class="img-fluid" src="{{ secure_asset($image -> img_path) }}" alt="" style="width:350px;height:250px;">
         </a>
-        <!--<div class="portfolio-caption">
-          <p class="text-muted">Illustration</p>
-        </div>-->
+        <div class="portfolio-caption">
+          <p class="text-muted">&nbsp;</p>
+        </div>
       </div>
+        @endif
       @endforeach
+    </div>
+    
+    <!-- Modal 1 -->
+    <div class="portfolio-modal modal fade" id="originalImageModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <img class="img-fluid d-block mx-auto" id="originalImage" src="" alt="" width="80%" height="80%">
+                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fas fa-times"></i>
+                    Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<script type="text/javascript">
+  function setImage(imgPath){
+    $("#originalImage").attr("src", imgPath);
+  }
+</script>
 @endsection

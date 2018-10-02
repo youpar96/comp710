@@ -35,7 +35,7 @@ class StylesADController extends Controller
     public function store(Request $request)
     {
         $style = $this->validate(request(), [
-            'st_name' => 'bail|required|min:3|max:30',
+            'st_name' => 'required|min:3|max:30',
             'st_description' => 'required|min:10|max:100',
             'st_duration' => 'bail|required|integer',
             'st_cost' => 'bail|required|regex:/^\d*(\.\d{1,2})?$/',

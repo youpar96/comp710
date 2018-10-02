@@ -11,7 +11,7 @@
 
 <div class="row">
     <div class = "col-auto ml-auto">
-        Status Filters<i class="fa fa-filter" ></i>
+        Status<i class="fa fa-filter" ></i>
         <a href="/jobsAD/filter/{{ 'new' }}" class="btn btn-primary btn-xs {{ $filter == 'new'? 'active' : '' }}">New</a>
         <a href="/jobsAD/filter/{{ 'read' }}" class="btn btn-primary btn-xs {{ $filter == 'read'? 'active' : '' }}">Read</a>
         <a href="/jobsAD/filter/{{ 'contact' }}" class="btn btn-primary btn-xs {{ $filter == 'contact'? 'active' : '' }}">Contact</a>
@@ -41,7 +41,9 @@
             <td>{{$job->j_pref_cont_meth}}</td>
             <td>{{$job->j_status}}</td>
             <td>
-                <a href="/jobsAD/{{$job->id}}" class="btn btn-primary btn-sm">View Detail</a>
+                <a href="/jobsAD/{{$job->id}}" class="btn btn-primary btn-sm">
+                    <i class="fa fa-eye"></i> Details
+                </a>
             </td>
         </tr>
     @endforeach

@@ -1,0 +1,41 @@
+[01-Oct-2018 23:02:34 Pacific/Auckland] PHP Warning:  Uncaught ErrorException: require(UploadHandler.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php:14
+Stack trace:
+#0 /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php(14): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(UploadH...', '/home/ubuntu/wo...', 14, Array)
+#1 /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php(14): require()
+#2 /home/ubuntu/workspace/BossCuts/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(43): include('/home/ubuntu/wo...')
+#3 /home/ubuntu/workspace/BossCuts/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/ubuntu/wo...', Array)
+#4 /home/ubuntu/workspace/BossCuts/vendor/laravel/framework/src/Illuminate/View/View.php(142): Illuminate\View\Engines\CompilerE in /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php on line 14
+[01-Oct-2018 23:02:34 Pacific/Auckland] PHP Fatal error:  Illuminate\View\Engines\PhpEngine::main(): Failed opening required 'UploadHandler.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php on line 14
+[02-Oct-2018 08:14:21 Pacific/Auckland] PHP Warning:  Uncaught ErrorException: require(UploadHandler.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php:14
+Stack trace:
+#0 /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php(14): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(UploadH...', '/home/ubuntu/wo...', 14, Array)
+#1 /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php(14): require()
+#2 /home/ubuntu/workspace/BossCuts/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(43): include('/home/ubuntu/wo...')
+#3 /home/ubuntu/workspace/BossCuts/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/ubuntu/wo...', Array)
+#4 /home/ubuntu/workspace/BossCuts/vendor/laravel/framework/src/Illuminate/View/View.php(142): Illuminate\View\Engines\CompilerE in /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php on line 14
+[02-Oct-2018 08:14:21 Pacific/Auckland] PHP Fatal error:  Illuminate\View\Engines\PhpEngine::main(): Failed opening required 'UploadHandler.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php on line 14
+[02-Oct-2018 08:18:04 Pacific/Auckland] PHP Warning:  Uncaught ErrorException: require(UploadHandler.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php:14
+Stack trace:
+#0 /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php(14): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(UploadH...', '/home/ubuntu/wo...', 14, Array)
+#1 /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php(14): require()
+#2 /home/ubuntu/workspace/BossCuts/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(43): include('/home/ubuntu/wo...')
+#3 /home/ubuntu/workspace/BossCuts/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/ubuntu/wo...', Array)
+#4 /home/ubuntu/workspace/BossCuts/vendor/laravel/framework/src/Illuminate/View/View.php(142): Illuminate\View\Engines\CompilerE in /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php on line 14
+[02-Oct-2018 08:18:04 Pacific/Auckland] PHP Fatal error:  Illuminate\View\Engines\PhpEngine::main(): Failed opening required 'UploadHandler.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php on line 14
+[02-Oct-2018 08:41:14 Pacific/Auckland] PHP Warning:  Uncaught ErrorException: require(UploadHandler.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php:14
+Stack trace:
+#0 /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php(14): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(UploadH...', '/home/ubuntu/wo...', 14, Array)
+#1 /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php(14): require()
+#2 /home/ubuntu/workspace/BossCuts/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(43): include('/home/ubuntu/wo...')
+#3 /home/ubuntu/workspace/BossCuts/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/ubuntu/wo...', Array)
+#4 /home/ubuntu/workspace/BossCuts/vendor/laravel/framework/src/Illuminate/View/View.php(142): Illuminate\View\Engines\CompilerE in /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php on line 14
+[02-Oct-2018 08:41:14 Pacific/Auckland] PHP Fatal error:  Illuminate\View\Engines\PhpEngine::main(): Failed opening required 'UploadHandler.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php on line 14
+[02-Oct-2018 08:41:45 Pacific/Auckland] PHP Warning:  Uncaught ErrorException: require(UploadHandler.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php:14
+Stack trace:
+#0 /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php(14): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(UploadH...', '/home/ubuntu/wo...', 14, Array)
+#1 /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php(14): require()
+#2 /home/ubuntu/workspace/BossCuts/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(43): include('/home/ubuntu/wo...')
+#3 /home/ubuntu/workspace/BossCuts/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/ubuntu/wo...', Array)
+#4 /home/ubuntu/workspace/BossCuts/vendor/laravel/framework/src/Illuminate/View/View.php(142): Illuminate\View\Engines\CompilerE in /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php on line 14
+[02-Oct-2018 08:41:45 Pacific/Auckland] PHP Fatal error:  Illuminate\View\Engines\PhpEngine::main(): Failed opening required 'UploadHandler.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/BossCuts/storage/framework/views/757b7cf094e833007f6e12724d504ba4a46e367d.php on line 14
+[02-Oct-2018 13:29:20 Pacific/Auckland] PHP Fatal error:  Constant expression contains invalid operations in /home/ubuntu/workspace/BossCuts/app/Http/Controllers/Auth/LoginController.php on line 28

@@ -22,16 +22,14 @@
                 <td>
                     <div class="d-inline">
                         <a href="stylesAD/{{ $style['id'] }}/edit" class="btn btn-primary btn-xs">
-                            <i class="pe-7s-edit"></i>
-                            Edit
+                             <i class="fa fa-edit"></i>Edit
                         </a>
                     </div>
                     <div class="d-inline">
                     <form class="d-inline"  action="{{url('stylesAD',$style['id'])}} "method="post" >
                         {{csrf_field()}} <input name="_method" type="hidden" value="DELETE">
                         <button class="d-inline btn btn-danger btn-xs" type="submit">
-                            <i class="pe-7s-trash"></i>
-                            Delete
+                            <i class="fa fa-trash"></i>Del
                         </button>
                     </form>
                     </div>
@@ -39,7 +37,8 @@
             </tr>
         @endforeach
     </table>
-<a href="stylesAD/create" class="btn btn-primary btn-lg">Add a New Style</a>
+<a href="stylesAD/create" class="btn btn-primary btn-lg">
+    <i class="fa fa-plus"></i> New Style</a>
 @endsection
 </body>
 </html>

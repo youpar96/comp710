@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<h1>Detailed Applicant Listing</h1>
+<h2>Detailed Applicant Listing</h2>
 @include ('layouts.errors')
 @include ('layouts.success')
 <div class="container-fluid">
@@ -102,7 +102,7 @@
     <div class = "col-md-3 font-weight-bold">Applicant's Current Status:</div>
     <div class = "col-md-9 text-uppercase">{{$job->j_status}}</div>
   </div>
-  <h1>Change Applicant's Status</h1>
+  <h3>Change Applicant's Status</h3>
   <form class="d-inline" action="{{ action('JobsADController@statusChange',$job['id']) }} "method="post" >
     {{csrf_field()}}
     <input name="_method" type="hidden" value="post">

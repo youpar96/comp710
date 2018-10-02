@@ -32,9 +32,7 @@ Route::post('statusChange/{id}', 'JobsADController@statusChange')->middleware('i
 
 //Styles /Cut Types Routes
 Route::resource('/styles','StylesController');
-Route::resource('stylesAD','StylesADController')->middleware('is_admin');
-
-
+Route::resource('/stylesAD','StylesADController')->middleware('is_admin');
 
 // Kenneth
 Route::get('/gallery', 'ImageController@index');
@@ -44,8 +42,10 @@ Route::get('/gallery', 'ImageController@index');
  *              ADMIN               *
  ************************************/
 Route::get('/admin/home', function () {
-    return view('admin/home');
+    return view('/admin/home');
+    //if(Auth::guest()) return redirect('login');
 });
 
-Route::get('/admin/gallery', 'ImageController@indexForAdmin');
+Route::get('/admin/gallery', 'ImageController@indexForAdmin')->name('admin.gallery')->middleware('is_admin');
+Route::post('/admin/gallery/upload', 'ImageController@uploadImages')->middleware('is_admin');
 
