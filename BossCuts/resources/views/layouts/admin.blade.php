@@ -84,7 +84,13 @@
                 <li class="application">
                     <a href="/jobsAD">
                         <i class="pe-7s-bell"></i>
-                        <p>Application</p>
+                        <p>Job Applications</p>
+                    </a>
+                </li>
+                <li class="public">
+                    <a href="/">
+                        <i class="pe-7s-bell"></i>
+                        <p>Public website</p>
                     </a>
                 </li>
             </ul>

@@ -56,16 +56,11 @@
             <li class="nav-item px-lg-4 jobs">
               <a class="nav-link text-uppercase text-expanded" href="jobs">Work Here</a>
             </li>
-            @guest
             <li class="nav-item px-lg-4 admin">
               <a class="nav-link text-uppercase text-expanded" href="/admin/home">Admin</a>
             </li>
+            @guest
             @else
-              @if(auth()->user()->isAdmin())
-                <li class="nav-item px-lg-4 admin">
-                  <a class="nav-link text-uppercase text-expanded" href="/admin/home">Admin</a>
-                </li>
-              @endif
               <li class="nav-item px-lg-4 logout">
                <a class="nav-link text-uppercase text-expanded" href="{{ route('logout') }}"
                    onclick="event.preventDefault();

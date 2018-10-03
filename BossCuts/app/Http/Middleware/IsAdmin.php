@@ -20,8 +20,8 @@ class IsAdmin
                 return redirect('login');
         }
         if(auth()->user()->isAdmin()) {
-        return $next($request);
+            return $next($request);
         }
-        return redirect('home');
+        return redirect('/');
     }
 }
