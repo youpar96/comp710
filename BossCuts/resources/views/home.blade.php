@@ -17,6 +17,11 @@
                     @endif
 
                     You are logged in!
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <a class="btn btn-info" href="{{ action('AppointmentController@appointment') }}" style="font-size: 20px;"> Home</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

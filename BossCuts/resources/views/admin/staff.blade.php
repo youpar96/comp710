@@ -32,19 +32,19 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($barbers as $barber)
-        <form action="#" method="post" id="barberForm_{{ $barber->id }}">
+        @foreach($staffs as $staff)
+        <form action="#" method="post" id="barberForm_{{ $staff->id }}">
             {{csrf_field()}}
-            <tr id="barber_{{ $barber->id }}_am" class="thead-dark">
+            <tr id="barber_{{ $staff->id }}_am" class="thead-dark">
                 <td scope="row" rowspan="2">
-                    <span id="barber_{{ $barber->id }}_name"> {{ $barber->ba_fname }} {{ $barber->ba_sname }}</span>
-                    <input type="text" class="form-control" name="ba_fname" value="{{ $barber->ba_fname }}" style="display:none;">
-                    <input type="text" class="form-control" name="ba_sname" value="{{ $barber->ba_sname }}" style="display:none;">
+                    <span id="barber_{{ $staff->id }}_name"> {{ $staff->s_fname }} {{ $staff->s_sname }}</span>
+                    <input type="text" class="form-control" name="s_fname" value="{{ $staff->s_fname }}" style="display:none;">
+                    <input type="text" class="form-control" name="s_sname" value="{{ $staff->s_sname }}" style="display:none;">
                     <br/>
-                    <input type="button" id="editBtn_{{ $barber->id }}" class="btn btn-primary btn-xs" value="Edit" onclick="editName('{{ $barber->id }}');">
+                    <input type="button" id="editBtn_{{ $staff->id }}" class="btn btn-primary btn-xs" value="Edit" onclick="editName('{{ $staff->id }}');">
                     <br/><br/>
-                    <input type="button" class="btn btn-primary btn-xs" value="Update" onclick="manageBarber('U', '{{ $barber->id }}');">
-                    <input type="button" class="btn btn-danger btn-xs" value="Delete" onclick="manageBarber('D', '{{ $barber->id }}');">
+                    <input type="button" class="btn btn-primary btn-xs" value="Update" onclick="manageBarber('U', '{{ $staff->id }}');">
+                    <input type="button" class="btn btn-danger btn-xs" value="Delete" onclick="manageBarber('D', '{{ $staff->id }}');">
                 </td>
                 <th>AM</th>
                 <td class="mon">
@@ -223,7 +223,7 @@
                     </select>
                 </td>
             </tr>
-            <tr class="thead-dark" id="barber_{{ $barber->id }}_pm">
+            <tr class="thead-dark" id="barber_{{ $staff->id }}_pm">
                 <th>PM</th>
                 <td class="mon">
                     <select name="mon_pm_start" class="form-control">
@@ -449,8 +449,8 @@
             {{csrf_field()}}
             <tr id="barber_new_am" class="thead-dark" style="display:none;">
                 <td scope="row" rowspan="2">
-                    <input type="text" class="form-control" name="ba_fname" placeholder="First Name" required>
-                    <input type="text" class="form-control" name="ba_sname" placeholder="Last Name" required>
+                    <input type="text" class="form-control" name="s_fname" placeholder="First Name" required>
+                    <input type="text" class="form-control" name="s_sname" placeholder="Last Name" required>
                     
                     <br/><br/>
                     <input type="button" class="btn btn-primary btn-xs" value="Register" onclick="manageBarber('I', '');">
@@ -874,7 +874,7 @@ function editName(id){
 function manageBarber(type, id){
     // insert
     if(type == "I"){
-        if($("#barber_new_am").find("input[name=ba_fname]").val() == "" || $("#barber_new_am").find("input[name=ba_sname]").val() == ""){
+        if($("#barber_new_am").find("input[name=s_fname]").val() == "" || $("#barber_new_am").find("input[name=s_sname]").val() == ""){
             alert("Please enter the new barber's name");
             return;
         }else{
@@ -919,48 +919,48 @@ function manageBarber(type, id){
     }
 }
 
-@foreach($barbers as $barber)
+@foreach($staffs as $staff)
 // Monday
-$("#barber_{{ $barber->id }}_am > .mon > select[name=mon_am_start]").val("{{ $barber->ba_mon_am_start }}");
-$("#barber_{{ $barber->id }}_am > .mon > select[name=mon_am_finish]").val("{{ $barber->ba_mon_am_finish }}");
-$("#barber_{{ $barber->id }}_pm > .mon > select[name=mon_pm_start]").val("{{ $barber->ba_mon_pm_start }}");
-$("#barber_{{ $barber->id }}_pm > .mon > select[name=mon_pm_finish]").val("{{ $barber->ba_mon_pm_finish }}");
+$("#barber_{{ $staff->id }}_am > .mon > select[name=mon_am_start]").val("{{ $staff->mon_am_start }}");
+$("#barber_{{ $staff->id }}_am > .mon > select[name=mon_am_finish]").val("{{ $staff->mon_am_finish }}");
+$("#barber_{{ $staff->id }}_pm > .mon > select[name=mon_pm_start]").val("{{ $staff->mon_pm_start }}");
+$("#barber_{{ $staff->id }}_pm > .mon > select[name=mon_pm_finish]").val("{{ $staff->mon_pm_finish }}");
 
 // Tuesday
-$("#barber_{{ $barber->id }}_am > .tue > select[name=tue_am_start]").val("{{ $barber->ba_tue_am_start }}");
-$("#barber_{{ $barber->id }}_am > .tue > select[name=tue_am_finish]").val("{{ $barber->ba_tue_am_finish }}");
-$("#barber_{{ $barber->id }}_pm > .tue > select[name=tue_pm_start]").val("{{ $barber->ba_tue_pm_start }}");
-$("#barber_{{ $barber->id }}_pm > .tue > select[name=tue_pm_finish]").val("{{ $barber->ba_tue_pm_finish }}");
+$("#barber_{{ $staff->id }}_am > .tue > select[name=tue_am_start]").val("{{ $staff->tue_am_start }}");
+$("#barber_{{ $staff->id }}_am > .tue > select[name=tue_am_finish]").val("{{ $staff->tue_am_finish }}");
+$("#barber_{{ $staff->id }}_pm > .tue > select[name=tue_pm_start]").val("{{ $staff->tue_pm_start }}");
+$("#barber_{{ $staff->id }}_pm > .tue > select[name=tue_pm_finish]").val("{{ $staff->tue_pm_finish }}");
 
 // Wednesday
-$("#barber_{{ $barber->id }}_am > .wed > select[name=wed_am_start]").val("{{ $barber->ba_wed_am_start }}");
-$("#barber_{{ $barber->id }}_am > .wed > select[name=wed_am_finish]").val("{{ $barber->ba_wed_am_finish }}");
-$("#barber_{{ $barber->id }}_pm > .wed > select[name=wed_pm_start]").val("{{ $barber->ba_wed_pm_start }}");
-$("#barber_{{ $barber->id }}_pm > .wed > select[name=wed_pm_finish]").val("{{ $barber->ba_wed_pm_finish }}");
+$("#barber_{{ $staff->id }}_am > .wed > select[name=wed_am_start]").val("{{ $staff->wed_am_start }}");
+$("#barber_{{ $staff->id }}_am > .wed > select[name=wed_am_finish]").val("{{ $staff->wed_am_finish }}");
+$("#barber_{{ $staff->id }}_pm > .wed > select[name=wed_pm_start]").val("{{ $staff->wed_pm_start }}");
+$("#barber_{{ $staff->id }}_pm > .wed > select[name=wed_pm_finish]").val("{{ $staff->wed_pm_finish }}");
 
 // Thursday
-$("#barber_{{ $barber->id }}_am > .thu > select[name=thu_am_start]").val("{{ $barber->ba_thu_am_start }}");
-$("#barber_{{ $barber->id }}_am > .thu > select[name=thu_am_finish]").val("{{ $barber->ba_thu_am_finish }}");
-$("#barber_{{ $barber->id }}_pm > .thu > select[name=thu_pm_start]").val("{{ $barber->ba_thu_pm_start }}");
-$("#barber_{{ $barber->id }}_pm > .thu > select[name=thu_pm_finish]").val("{{ $barber->ba_thu_pm_finish }}");
+$("#barber_{{ $staff->id }}_am > .thu > select[name=thu_am_start]").val("{{ $staff->thu_am_start }}");
+$("#barber_{{ $staff->id }}_am > .thu > select[name=thu_am_finish]").val("{{ $staff->thu_am_finish }}");
+$("#barber_{{ $staff->id }}_pm > .thu > select[name=thu_pm_start]").val("{{ $staff->thu_pm_start }}");
+$("#barber_{{ $staff->id }}_pm > .thu > select[name=thu_pm_finish]").val("{{ $staff->thu_pm_finish }}");
 
 // Friday
-$("#barber_{{ $barber->id }}_am > .fri > select[name=fri_am_start]").val("{{ $barber->ba_fri_am_start }}");
-$("#barber_{{ $barber->id }}_am > .fri > select[name=fri_am_finish]").val("{{ $barber->ba_fri_am_finish }}");
-$("#barber_{{ $barber->id }}_pm > .fri > select[name=fri_pm_start]").val("{{ $barber->ba_fri_pm_start }}");
-$("#barber_{{ $barber->id }}_pm > .fri > select[name=fri_pm_finish]").val("{{ $barber->ba_fri_pm_finish }}");
+$("#barber_{{ $staff->id }}_am > .fri > select[name=fri_am_start]").val("{{ $staff->fri_am_start }}");
+$("#barber_{{ $staff->id }}_am > .fri > select[name=fri_am_finish]").val("{{ $staff->fri_am_finish }}");
+$("#barber_{{ $staff->id }}_pm > .fri > select[name=fri_pm_start]").val("{{ $staff->fri_pm_start }}");
+$("#barber_{{ $staff->id }}_pm > .fri > select[name=fri_pm_finish]").val("{{ $staff->fri_pm_finish }}");
 
 // Saturday
-$("#barber_{{ $barber->id }}_am > .sat > select[name=sat_am_start]").val("{{ $barber->ba_sat_am_start }}");
-$("#barber_{{ $barber->id }}_am > .sat > select[name=sat_am_finish]").val("{{ $barber->ba_sat_am_finish }}");
-$("#barber_{{ $barber->id }}_pm > .sat > select[name=sat_pm_start]").val("{{ $barber->ba_sat_pm_start }}");
-$("#barber_{{ $barber->id }}_pm > .sat > select[name=sat_pm_finish]").val("{{ $barber->ba_sat_pm_finish }}");
+$("#barber_{{ $staff->id }}_am > .sat > select[name=sat_am_start]").val("{{ $staff->sat_am_start }}");
+$("#barber_{{ $staff->id }}_am > .sat > select[name=sat_am_finish]").val("{{ $staff->sat_am_finish }}");
+$("#barber_{{ $staff->id }}_pm > .sat > select[name=sat_pm_start]").val("{{ $staff->sat_pm_start }}");
+$("#barber_{{ $staff->id }}_pm > .sat > select[name=sat_pm_finish]").val("{{ $staff->sat_pm_finish }}");
 
 // Sunday
-$("#barber_{{ $barber->id }}_am > .sun > select[name=sun_am_start]").val("{{ $barber->ba_sun_am_start }}");
-$("#barber_{{ $barber->id }}_am > .sun > select[name=sun_am_finish]").val("{{ $barber->ba_sun_am_finish }}");
-$("#barber_{{ $barber->id }}_pm > .sun > select[name=sun_pm_start]").val("{{ $barber->ba_sun_pm_start }}");
-$("#barber_{{ $barber->id }}_pm > .sun > select[name=sun_pm_finish]").val("{{ $barber->ba_sun_pm_finish }}");
+$("#barber_{{ $staff->id }}_am > .sun > select[name=sun_am_start]").val("{{ $staff->sun_am_start }}");
+$("#barber_{{ $staff->id }}_am > .sun > select[name=sun_am_finish]").val("{{ $staff->sun_am_finish }}");
+$("#barber_{{ $staff->id }}_pm > .sun > select[name=sun_pm_start]").val("{{ $staff->sun_pm_start }}");
+$("#barber_{{ $staff->id }}_pm > .sun > select[name=sun_pm_finish]").val("{{ $staff->sun_pm_finish }}");
 @endforeach
 </script>
 @endsection

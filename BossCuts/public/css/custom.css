@@ -45,3 +45,28 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+.label-form {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.label-SelectedCalendarDay {
+    margin-left: 10px;
+}
+
+.cursor-Pointer {
+    cursor: pointer;
+}
+
+.cursor-NotAllowed {
+    cursor: not-allowed;
+}
+
+.input-validation-error {
+    border: 1px solid #dc3545 !important;
+}
+
+.sizeCalendar {
+    max-width: 800px !important;
+}

@@ -1,10 +1,12 @@
 @extends('layouts.front')
 @section('content')
-
-<div class="well"><h1>Join Boss Cuts</h1></div>
 @include ('layouts.errors')
 @include ('layouts.success')
-<div class="container">
+<div class="container mb-5">
+  <div class="col-lg-12 text-center">
+    <h2 class="section-heading text-uppercase">Join Boss Cuts</h2>
+    <h3 class="section-subheading text-muted">&nbsp;</h3>
+  </div>
 <form method="POST" action="{{url('jobs')}}" accept-charset="UTF-8" enctype="multipart/form-data">
     {{ csrf_field() }}
   <!-------------------------------------------- Names ------------------------------------------------>
@@ -72,7 +74,7 @@
   <div class="form-group row">
     <label for="j_cover_letter" class="col-sm-3">Tell us about yourself and why you want to join us:</label>
     <div class="col-sm-9">
-      <textarea class="form-control" rows="3" id="j_cover_letter" name="j_cover_letter" 
+      <textarea class="form-control" rows="2" id="j_cover_letter" name="j_cover_letter" 
         maxlength=1000 required>{{ old('j_cover_letter') }}</textarea>
     </div>
   </div>
@@ -224,7 +226,7 @@
       If you answered yes to any of the last 3 questions, please provide more details:
     </label>
     <div class="col-sm-8">
-      <textarea class="form-control" rows="3" id="j_issue_notes" name="j_issue_notes" maxlength=1000 >
+      <textarea class="form-control" rows="2" id="j_issue_notes" name="j_issue_notes" maxlength=1000 >
         {{ old('j_issue_notes') }}
       </textarea>
     </div>

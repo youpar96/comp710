@@ -21,6 +21,20 @@
     <!-- Custom styles for this template -->
     <link href="{{ secure_asset('css/business-casual.min.css') }}" rel="stylesheet">
     <!--<link href="{{ secure_asset('css/creative.min.css') }}" rel="stylesheet">-->
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ secure_asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ secure_asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    
+    <!-- Plugin JavaScript -->
+    <script src="{{ secure_asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    
+    <!-- Custom scripts for this template -->
+    <script src="{{ secure_asset('js/creative.min.js') }}"></script>
+    
+    <!-- Moment -->
+    <script src='/js/moment.min.js' type="text/javascript"></script>
+    
   </head>
 
   <body>
@@ -42,10 +56,10 @@
               <a class="nav-link text-uppercase text-expanded" href="/">Home</a>
             </li>
             <li class="nav-item px-lg-4 gallery">
-              <a class="nav-link text-uppercase text-expanded" href="gallery">Gallery</a>
+              <a class="nav-link text-uppercase text-expanded" href="/gallery">Gallery</a>
             </li>
             <li class="nav-item px-lg-4 service">
-              <a class="nav-link text-uppercase text-expanded" href="styles">Service</a>
+              <a class="nav-link text-uppercase text-expanded" href="/styles">Service</a>
             </li>
             <li class="nav-item px-lg-4 about">
               <a class="nav-link text-uppercase text-expanded js-scroll-trigger" href="/#about">About</a>
@@ -54,7 +68,10 @@
               <a class="nav-link text-uppercase text-expanded js-scroll-trigger" href="/#contact">Contact</a>
             </li>
             <li class="nav-item px-lg-4 jobs">
-              <a class="nav-link text-uppercase text-expanded" href="jobs">Work Here</a>
+              <a class="nav-link text-uppercase text-expanded" href="/jobs">Work Here</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{{ action('AppointmentController@appointment') }}">Appointments</a>
             </li>
             @guest
             <li class="nav-item px-lg-4 admin">
@@ -93,14 +110,14 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="{{ secure_asset('vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ secure_asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- <script src="{{ secure_asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ secure_asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script> -->
     
     <!-- Plugin JavaScript -->
-    <script src="{{ secure_asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <!-- <script src="{{ secure_asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script> -->
     
     <!-- Custom scripts for this template -->
-    <script src="{{ secure_asset('js/creative.min.js') }}"></script>
+    <!-- <script src="{{ secure_asset('js/creative.min.js') }}"></script> -->
     
     <script type="text/javascript">
     	$(document).ready(function(){

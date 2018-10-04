@@ -17,4 +17,8 @@ class Style extends Model
     Public function scopeVisible($query) {
         Return $query->where('st_visibility',1);
     }
+    
+    public function barbers(){
+        return $this->belongsTo('App\Qualif');
+    }
 }

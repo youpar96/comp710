@@ -27,6 +27,9 @@
     <link href="{{ secure_asset('admin/css/pe-icon-7-stroke.css') }}" rel="stylesheet" />
     
     <script src="{{ secure_asset('admin/js/jquery.3.2.1.min.js') }}" type="text/javascript"></script>
+    
+    <!-- Moment File to handle with datetime -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
 
 </head>
 <body>
@@ -63,6 +66,12 @@
                     <a href="/admin/calendar">
                         <i class="pe-7s-note2"></i>
                         <p>Calendar</p>
+                    </a>
+                </li>
+                <li class="barber">
+                    <a href="/admin/barber">
+                        <i class="pe-7s-user"></i>
+                        <p>Barbers</p>
                     </a>
                 </li>
                 <li class="staff">

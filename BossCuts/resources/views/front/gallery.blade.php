@@ -27,7 +27,7 @@
     
     <!-- Modal 1 -->
     <div class="portfolio-modal modal fade" id="originalImageModal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog" style="max-width:70%;max-height:100%;margin-top:15rem;">
+      <div class="modal-dialog" style="max-width:70%;max-height:100%;margin-top:5rem;">
         <div class="modal-content">
           <div class="close-modal" data-dismiss="modal">
             <div class="lr">
