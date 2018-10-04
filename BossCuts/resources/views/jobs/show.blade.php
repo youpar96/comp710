@@ -3,6 +3,10 @@
 <h2>Detailed Applicant Listing</h2>
 @include ('layouts.errors')
 @include ('layouts.success')
+<!-- This shows all details, allows admin to download the CV --->
+<!-- The only field that can be changed is the status as legally speaking we should not alter 
+    application information--->
+
 <div class="container-fluid">
   <!-------------------------------------------- Names --------------------------------------->
   <div class="row">

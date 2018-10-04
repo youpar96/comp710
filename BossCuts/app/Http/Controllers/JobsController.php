@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Job;
 use Carbon\Carbon;
-
+/*
+    This controller is used for all public related job application logic
+*/
 class JobsController extends Controller
 {
     /**
@@ -35,10 +37,12 @@ class JobsController extends Controller
      */
     public function store(Request $request)
     {
+        //put the request straight into flash in preparation for any error messages
         $request->flash();
-//      dd($request->session());
+        /*
         if ($request->has('j_avail_date')) dd($request->old('j_avail_date'));
         else dd("dont have availdate");
+        */
         $workType = $request->old('work_type');
         $workDays = $request->old('work_days');
         if($workType !== null) {

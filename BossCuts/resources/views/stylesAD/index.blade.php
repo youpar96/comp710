@@ -2,8 +2,12 @@
 @section('content')
 @include ('layouts.errors')
 @include ('layouts.success')
+
+<!-- Admin's index of styles. From here we can edit, delete, create -->
+<!-- Basic HTML validation is used here  -->
+
     <div class="section-heading"><h3>Add Change Delete Styles of Cut</h3></div>    
-    <table class="table table-bordered table-light table-responsive">
+    <table class="table table-bordered table-light table-striped table-responsive">
         <thead class="thead-dark">
             <tr>
                 <th scope = "col">Service</th>

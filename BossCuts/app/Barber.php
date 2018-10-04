@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Barber extends Model
 {
     protected $fillable = [
-        'ba_id',
+        'id',
         'ba_fname',
         'ba_sname',
         'ba_mon_am_start',

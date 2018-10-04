@@ -3,6 +3,9 @@
 <div class="site-heading-upper text-primary mb-3"><h1>Our Services</h1></div>    
 @include ('layouts.errors')
 @include ('layouts.success')
+<!--  This is a display for the customer side of the website -->
+<!--  View Only!!-->
+
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-5">

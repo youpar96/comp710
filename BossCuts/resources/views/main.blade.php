@@ -10,8 +10,9 @@
               <span class="section-heading-upper">Barber Shop</span>
               <span class="section-heading-lower">The Best Barber Shop in Hamilton</span>
             </h2>
-            <p class="mb-3">Premium Men’s Hair Cutting Studio based in Hamilton. We pride ourselves on our work and tailor make our cuts to our clients needs. For premium result, at our barbershop we combine modern techniques with traditional ones. 
-            <br/><br/>Bespoke Barbers by appointment only.
+            <p class="mb-3">Premium Men’s Hair Cutting Studio based in Hamilton. We pride ourselves on our work and tailor make our cuts to our clients needs. For premium results,
+                at our barbershop we combine modern techniques with traditional ones. 
+            <br/><br/>Bespoke Barbers.
             </p>
             <div class="intro-button mx-auto">
               <a class="btn btn-primary btn-xl" href="#">Make Appointment</a>
@@ -30,7 +31,8 @@
                 <span class="section-heading-upper">Our Promise</span>
                 <span class="section-heading-lower">To You</span>
               </h2>
-              <p class="mb-0">When you walk into our shop to start your day, we are dedicated to providing you with friendly service, a welcoming atmosphere, and above all else, excellent products made with the highest quality ingredients. If you are not satisfied, please let us know and we will do whatever we can to make things right!</p>
+              <p class="mb-0">When you walk into our shop, we are dedicated to providing you with friendly service, a welcoming atmosphere, and above all else, 
+              an excellent cut or style. If you are not satisfied, please let us know and we will do whatever we can to make things right!</p>
             </div>
           </div>
         </div>
@@ -48,8 +50,8 @@
                   <span class="section-heading-upper">Facny Hair Services</span>
                   <span class="section-heading-lower">About Our Shop</span>
                 </h2>
-                <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
-                <p class="mb-0">We guarantee that you will fall in <em>lust</em> with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.</p>
+                <p>Founded in 2013 by the Rakena brothers, our establishment has been providing our clients with cool cuts with a cheerful vibe. 
+                <p>We love to give back to the community who have supported us over the years. Autism  New Zealand holds a special place in our hearts.</p>
               </div>
             </div>
           </div>

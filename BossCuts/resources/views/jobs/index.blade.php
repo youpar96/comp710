@@ -7,21 +7,20 @@
 @include ('layouts.errors')
 @include ('layouts.success')
 
-<!-- <div class="row justify-content-end">  -->
-
+<!-- Filter Buttons - colour coded  -->
 <div class="row">
     <div class = "col-auto ml-auto">
         Status<i class="fa fa-filter" ></i>
-        <a href="/jobsAD/filter/{{ 'new' }}" class="btn btn-primary btn-xs {{ $filter == 'new'? 'active' : '' }}">New</a>
+        <a href="/jobsAD/filter/{{ 'new' }}" class="btn btn-success btn-xs {{ $filter == 'new'? 'active' : '' }}">New</a>
         <a href="/jobsAD/filter/{{ 'read' }}" class="btn btn-primary btn-xs {{ $filter == 'read'? 'active' : '' }}">Read</a>
-        <a href="/jobsAD/filter/{{ 'contact' }}" class="btn btn-primary btn-xs {{ $filter == 'contact'? 'active' : '' }}">Contact</a>
-        <a href="/jobsAD/filter/{{ 'hold' }}" class="btn btn-primary btn-xs {{ $filter == 'hold'? 'active' : '' }}">Hold</a>
-        <a href="/jobsAD/filter/{{ 'reject' }}" class="btn btn-primary btn-xs {{ $filter == 'reject'? 'active' : '' }}">Reject</a>
+        <a href="/jobsAD/filter/{{ 'contact' }}" class="btn btn-info btn-xs {{ $filter == 'contact'? 'active' : '' }}">Contact</a>
+        <a href="/jobsAD/filter/{{ 'hold' }}" class="btn btn-warning btn-xs {{ $filter == 'hold'? 'active' : '' }}">Hold</a>
+        <a href="/jobsAD/filter/{{ 'reject' }}" class="btn btn-danger btn-xs {{ $filter == 'reject'? 'active' : '' }}">Reject</a>
         <a href="/jobsAD" class="btn btn-primary btn-xs {{ $filter == 'all'? 'active' : '' }}">Show All</a>
     </div>
 </div>
 
-<table class="table table-bordered table-light table-responsive">
+<table class="table table-bordered table-light table-responsive table-striped">
     <thead class="thead-dark">
         <tr>
             <th scope = "col">Name</div>

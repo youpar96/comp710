@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Style;
-
+/*
+    This controller is used for all admin related styles logic
+*/
 class StylesADController extends Controller
 {
     /************************************
@@ -34,12 +36,21 @@ class StylesADController extends Controller
      */
     public function store(Request $request)
     {
-        $style = $this->validate(request(), [
-            'st_name' => 'required|min:3|max:30',
+         $rules = [ 'st_name' => 'required|min:3|max:30',
             'st_description' => 'required|min:10|max:100',
-            'st_duration' => 'bail|required|integer',
-            'st_cost' => 'bail|required|regex:/^\d*(\.\d{1,2})?$/',
-            ]);
+            'st_duration' => 'required|integer|between:5,90',
+            'st_cost' => 'required|numeric|between:5,149.99'
+        ];
+        $customMessages = [
+            'st_name.required' => 'Please enter style name, it is required',
+            'st_description.required' => 'Please enter style description, it is required',
+            'st_minutes.required' => 'Please enter style minutes, it is required',
+            'st_cost.required' => 'Please enter style cost, it is required',
+            'st_duration.between' => 'Minutes must be betweem 5 and 90',
+            'st_cost.between' => 'Cost must be betweem 5 and 149.99',
+        ];
+        $style = $this->validate($request, $rules, $customMessages);
+        
         $style['st_visibility'] = 1;
         Style::create($style);
         return redirect('stylesAD')->with('success','The new style has been created');
@@ -66,12 +77,21 @@ class StylesADController extends Controller
     public function update(Request $request, $id)
     {
         $style = Style::find($id);
-        $this->validate(request(), [
-            'st_name' => 'bail|required|min:3|max:30',
+        $rules = [ 'st_name' => 'required|min:3|max:30',
             'st_description' => 'required|min:10|max:100',
-            'st_duration' => 'required|integer',
-            'st_cost' => 'required|regex:/^\d*(\.\d{1,2})?$/',
-        ]);
+            'st_duration' => 'required|integer|between:5,90',
+            'st_cost' => 'required|numeric|between:5,149.99'
+        ];
+        $customMessages = [
+            'st_name.required' => 'Please enter style name, it is required',
+            'st_description.required' => 'Please enter style description, it is required',
+            'st_minutes.required' => 'Please enter style minutes, it is required',
+            'st_cost.required' => 'Please enter style cost, it is required',
+            'st_duration.between' => 'Minutes must be betweem 5 and 90',
+            'st_cost.between' => 'Cost must be betweem 5 and 149.99',
+        ];
+        $this->validate($request, $rules, $customMessages);
+        
         $style->st_name = $request->get('st_name');
         $style->st_description = $request->get('st_description');
         $style->st_duration = $request->get('st_duration');

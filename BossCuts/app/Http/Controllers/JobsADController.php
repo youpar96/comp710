@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Job;
 use Carbon\Carbon;
-
+/*
+    This controller is used for all admin related job application logic
+*/
 class JobsADController extends Controller
 {
+    
     /******************** index *************************
      * Display a listing of the Job Applications.
      *

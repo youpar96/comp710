@@ -56,3 +56,6 @@ Route::get('/admin/gallery', 'ImageController@indexForAdmin')->name('admin.galle
 Route::post('/admin/gallery/upload', 'ImageController@uploadImages')->middleware('is_admin');
 
 Route::get('/admin/staff', 'StaffController@indexForAdmin')->name('admin.staff')->middleware('is_admin');
+Route::post('/admin/staff/insert', 'StaffController@insertStaff')->middleware('is_admin');
+Route::post('/admin/staff/update/{id}', 'StaffController@updateStaff')->middleware('is_admin');
+Route::post('/admin/staff/delete/{id}', 'StaffController@deleteStaff')->middleware('is_admin');

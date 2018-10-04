@@ -25,6 +25,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{{ secure_asset('admin/css/pe-icon-7-stroke.css') }}" rel="stylesheet" />
+    
+    <script src="{{ secure_asset('admin/js/jquery.3.2.1.min.js') }}" type="text/javascript"></script>
 
 </head>
 <body>
@@ -183,7 +185,6 @@
 </body>
 
     <!--   Core JS Files   -->
-    <script src="{{ secure_asset('admin/js/jquery.3.2.1.min.js') }}" type="text/javascript"></script>
 	<script src="{{ secure_asset('admin/js/bootstrap.min.js') }}" type="text/javascript"></script>
 
     <!--  Notifications Plugin    -->

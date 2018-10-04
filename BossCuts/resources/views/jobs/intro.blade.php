@@ -3,7 +3,9 @@
 <div class="jumbotron text-center">
   <h1>Join Boss Cuts</h1>
 </div>
-  
+<!--     This is justs a landing page to introduce jobs at Boss Cuts ---->
+<!--     If the applicant successfully enters their details, redirect back here with success message ---->
+
 <div class="container">
   @include ('layouts.errors')
   @include ('layouts.success')
