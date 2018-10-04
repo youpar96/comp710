@@ -27,7 +27,7 @@
     
     <!-- Modal 1 -->
     <div class="portfolio-modal modal fade" id="originalImageModal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog" style="max-width:70%;max-height:100%;margin-top:15rem;">
         <div class="modal-content">
           <div class="close-modal" data-dismiss="modal">
             <div class="lr">
@@ -38,10 +38,7 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <img class="img-fluid d-block mx-auto" id="originalImage" src="" alt="" width="80%" height="80%">
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Close</button>
+                  <img class="img-fluid d-block mx-auto" id="originalImage" src="" alt="" data-dismiss="modal" style="margin-top:5rem;margin-bottom:5rem;">
                 </div>
               </div>
             </div>

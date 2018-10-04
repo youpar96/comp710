@@ -14,7 +14,7 @@ class StaffController extends Controller
         return view('admin.staff', compact('barbers'));
     }
     
-    public function insertStaff(Request $request, $id){
+    public function insertStaff(Request $request){
         $barber = new Barber();
         
         $barber->ba_fname = $request->post('ba_fname');
@@ -50,7 +50,7 @@ class StaffController extends Controller
         
         $barber->save();
         
-        return redirect('admin.staff')->with('success', 'The new staff has been registered');
+        return redirect()->route('admin.staff')->with('success', 'The new staff has been registered');
     }
     
     public function updateStaff(Request $request, $id){

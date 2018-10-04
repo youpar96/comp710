@@ -444,14 +444,427 @@
             </tr>
         </form>
         @endforeach
+        <!-- new staff -->
+        <form action="#" method="post" id="barberForm_new">
+            {{csrf_field()}}
+            <tr id="barber_new_am" class="thead-dark" style="display:none;">
+                <td scope="row" rowspan="2">
+                    <input type="text" class="form-control" name="ba_fname" placeholder="First Name" required>
+                    <input type="text" class="form-control" name="ba_sname" placeholder="Last Name" required>
+                    
+                    <br/><br/>
+                    <input type="button" class="btn btn-primary btn-xs" value="Register" onclick="manageBarber('I', '');">
+                </td>
+                <th>AM</th>
+                <td class="mon">
+                    <select name="mon_am_start" class="form-control">
+                        <option value="">Start</option>
+                        <option value="0">Off</option>
+                        <!--<option value="830">08:30</option>-->
+                        <option value="900">09:00</option>
+                        <option value="930">09:30</option>
+                        <option value="1000">10:00</option>
+                        <option value="1030">10:30</option>
+                        <option value="1100">11:00</option>
+                        <option value="1130">11:30</option>
+                    </select>
+                    <select name="mon_am_finish" class="form-control">
+                        <option value="">End</option>
+                        <option value="0">Off</option>
+                        <!--<option value="830">08:30</option>-->
+                        <option value="900">09:00</option>
+                        <option value="930">09:30</option>
+                        <option value="1000">10:00</option>
+                        <option value="1030">10:30</option>
+                        <option value="1100">11:00</option>
+                        <option value="1130">11:30</option>
+                        <option value="1200">12:00</option>
+                    </select>
+                </td>
+                <td class="tue">
+                    <select name="tue_am_start" class="form-control">
+                        <option value="">Start</option>
+                        <option value="0">Off</option>
+                        <!--<option value="830">08:30</option>-->
+                        <option value="900">09:00</option>
+                        <option value="930">09:30</option>
+                        <option value="1000">10:00</option>
+                        <option value="1030">10:30</option>
+                        <option value="1100">11:00</option>
+                        <option value="1130">11:30</option>
+                    </select>
+                    <select name="tue_am_finish" class="form-control">
+                        <option value="">End</option>
+                        <option value="0">Off</option>
+                        <!--<option value="830">08:30</option>-->
+                        <option value="900">09:00</option>
+                        <option value="930">09:30</option>
+                        <option value="1000">10:00</option>
+                        <option value="1030">10:30</option>
+                        <option value="1100">11:00</option>
+                        <option value="1130">11:30</option>
+                        <option value="1200">12:00</option>
+                    </select>
+                </td>
+                <td class="wed">
+                    <select name="wed_am_start" class="form-control">
+                        <option value="">Start</option>
+                        <option value="0">Off</option>
+                        <!--<option value="830">08:30</option>-->
+                        <option value="900">09:00</option>
+                        <option value="930">09:30</option>
+                        <option value="1000">10:00</option>
+                        <option value="1030">10:30</option>
+                        <option value="1100">11:00</option>
+                        <option value="1130">11:30</option>
+                    </select>
+                    <select name="wed_am_finish" class="form-control">
+                        <option value="">End</option>
+                        <option value="0">Off</option>
+                        <!--<option value="830">08:30</option>-->
+                        <option value="900">09:00</option>
+                        <option value="930">09:30</option>
+                        <option value="1000">10:00</option>
+                        <option value="1030">10:30</option>
+                        <option value="1100">11:00</option>
+                        <option value="1130">11:30</option>
+                        <option value="1200">12:00</option>
+                    </select>
+                </td>
+                <td class="thu">
+                    <select name="thu_am_start" class="form-control">
+                        <option value="">Start</option>
+                        <option value="0">Off</option>
+                        <option value="830">08:30</option>
+                        <option value="900">09:00</option>
+                        <option value="930">09:30</option>
+                        <option value="1000">10:00</option>
+                        <option value="1030">10:30</option>
+                        <option value="1100">11:00</option>
+                        <option value="1130">11:30</option>
+                    </select>
+                    <select name="thu_am_finish" class="form-control">
+                        <option value="">End</option>
+                        <option value="0">Off</option>
+                        <option value="830">08:30</option>
+                        <option value="900">09:00</option>
+                        <option value="930">09:30</option>
+                        <option value="1000">10:00</option>
+                        <option value="1030">10:30</option>
+                        <option value="1100">11:00</option>
+                        <option value="1130">11:30</option>
+                        <option value="1200">12:00</option>
+                    </select>
+                </td>
+                <td class="fri">
+                    <select name="fri_am_start" class="form-control">
+                        <option value="">Start</option>
+                        <option value="0">Off</option>
+                        <!--<option value="830">08:30</option>-->
+                        <option value="900">09:00</option>
+                        <option value="930">09:30</option>
+                        <option value="1000">10:00</option>
+                        <option value="1030">10:30</option>
+                        <option value="1100">11:00</option>
+                        <option value="1130">11:30</option>
+                    </select>
+                    <select name="fri_am_finish" class="form-control">
+                        <option value="">End</option>
+                        <option value="0">Off</option>
+                        <!--<option value="830">08:30</option>-->
+                        <option value="900">09:00</option>
+                        <option value="930">09:30</option>
+                        <option value="1000">10:00</option>
+                        <option value="1030">10:30</option>
+                        <option value="1100">11:00</option>
+                        <option value="1130">11:30</option>
+                        <option value="1200">12:00</option>
+                    </select>
+                </td>
+                <td class="sat">
+                    <select name="sat_am_start" class="form-control">
+                        <option value="">Start</option>
+                        <option value="0">Off</option>
+                        <!--<option value="830">08:30</option>-->
+                        <option value="900">09:00</option>
+                        <option value="930">09:30</option>
+                        <option value="1000">10:00</option>
+                        <option value="1030">10:30</option>
+                        <option value="1100">11:00</option>
+                        <option value="1130">11:30</option>
+                    </select>
+                    <select name="sat_am_finish" class="form-control">
+                        <option value="">End</option>
+                        <option value="0">Off</option>
+                        <!--<option value="830">08:30</option>-->
+                        <option value="900">09:00</option>
+                        <option value="930">09:30</option>
+                        <option value="1000">10:00</option>
+                        <option value="1030">10:30</option>
+                        <option value="1100">11:00</option>
+                        <option value="1130">11:30</option>
+                        <option value="1200">12:00</option>
+                    </select>
+                </td>
+                <td class="sun">
+                    <select name="sun_am_start" class="form-control">
+                        <option value="">Start</option>
+                        <option value="0">Off</option>
+                        <!--<option value="830">08:30</option>-->
+                        <option value="900">09:00</option>
+                        <option value="930">09:30</option>
+                        <option value="1000">10:00</option>
+                        <option value="1030">10:30</option>
+                        <option value="1100">11:00</option>
+                        <option value="1130">11:30</option>
+                    </select>
+                    <select name="sun_am_finish" class="form-control">
+                        <option value="">End</option>
+                        <option value="0">Off</option>
+                        <!--<option value="830">08:30</option>-->
+                        <option value="900">09:00</option>
+                        <option value="930">09:30</option>
+                        <option value="1000">10:00</option>
+                        <option value="1030">10:30</option>
+                        <option value="1100">11:00</option>
+                        <option value="1130">11:30</option>
+                        <option value="1200">12:00</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="thead-dark" id="barber_new_pm" style="display:none;">
+                <th>PM</th>
+                <td class="mon">
+                    <select name="mon_pm_start" class="form-control">
+                        <option value="">Start</option>
+                        <option value="0">Off</option>
+                        <option value="1200">12:00</option>
+                        <option value="1230">12:30</option>
+                        <option value="1300">13:00</option>
+                        <option value="1330">13:30</option>
+                        <option value="1400">14:00</option>
+                        <option value="1430">14:30</option>
+                        <option value="1500">15:00</option>
+                        <option value="1530">15:30</option>
+                        <option value="1600">16:00</option>
+                        <option value="1630">16:30</option>
+                        <option value="1700">17:00</option>
+                    </select>
+                    <select name="mon_pm_finish" class="form-control">
+                        <option value="">End</option>
+                        <option value="0">Off</option>
+                        <option value="1230">12:30</option>
+                        <option value="1300">13:00</option>
+                        <option value="1330">13:30</option>
+                        <option value="1400">14:00</option>
+                        <option value="1430">14:30</option>
+                        <option value="1500">15:00</option>
+                        <option value="1530">15:30</option>
+                        <option value="1600">16:00</option>
+                        <option value="1630">16:30</option>
+                        <option value="1700">17:00</option>
+                    </select>
+                </td>
+                <td class="tue">
+                    <select name="tue_pm_start" class="form-control">
+                        <option value="">Start</option>
+                        <option value="0">Off</option>
+                        <option value="1200">12:00</option>
+                        <option value="1230">12:30</option>
+                        <option value="1300">13:00</option>
+                        <option value="1330">13:30</option>
+                        <option value="1400">14:00</option>
+                        <option value="1430">14:30</option>
+                        <option value="1500">15:00</option>
+                        <option value="1530">15:30</option>
+                        <option value="1600">16:00</option>
+                        <option value="1630">16:30</option>
+                        <option value="1700">17:00</option>
+                    </select>
+                    <select name="tue_pm_finish" class="form-control">
+                        <option value="">End</option>
+                        <option value="0">Off</option>
+                        <option value="1230">12:30</option>
+                        <option value="1300">13:00</option>
+                        <option value="1330">13:30</option>
+                        <option value="1400">14:00</option>
+                        <option value="1430">14:30</option>
+                        <option value="1500">15:00</option>
+                        <option value="1530">15:30</option>
+                        <option value="1600">16:00</option>
+                        <option value="1630">16:30</option>
+                        <option value="1700">17:00</option>
+                    </select>
+                </td>
+                <td class="wed">
+                    <select name="wed_pm_start" class="form-control">
+                        <option value="">Start</option>
+                        <option value="0">Off</option>
+                        <option value="1200">12:00</option>
+                        <option value="1230">12:30</option>
+                        <option value="1300">13:00</option>
+                        <option value="1330">13:30</option>
+                        <option value="1400">14:00</option>
+                        <option value="1430">14:30</option>
+                        <option value="1500">15:00</option>
+                        <option value="1530">15:30</option>
+                        <option value="1600">16:00</option>
+                        <option value="1630">16:30</option>
+                        <option value="1700">17:00</option>
+                    </select>
+                    <select name="wed_pm_finish" class="form-control">
+                        <option value="">End</option>
+                        <option value="0">Off</option>
+                        <option value="1230">12:30</option>
+                        <option value="1300">13:00</option>
+                        <option value="1330">13:30</option>
+                        <option value="1400">14:00</option>
+                        <option value="1430">14:30</option>
+                        <option value="1500">15:00</option>
+                        <option value="1530">15:30</option>
+                        <option value="1600">16:00</option>
+                        <option value="1630">16:30</option>
+                        <option value="1700">17:00</option>
+                    </select>
+                </td>
+                <td class="thu">
+                    <select name="thu_pm_start" class="form-control">
+                        <option value="">Start</option>
+                        <option value="0">Off</option>
+                        <option value="1200">12:00</option>
+                        <option value="1230">12:30</option>
+                        <option value="1300">13:00</option>
+                        <option value="1330">13:30</option>
+                        <option value="1400">14:00</option>
+                        <option value="1430">14:30</option>
+                        <option value="1500">15:00</option>
+                        <option value="1530">15:30</option>
+                        <option value="1600">16:00</option>
+                        <option value="1630">16:30</option>
+                        <option value="1700">17:00</option>
+                    </select>
+                    <select name="thu_pm_finish" class="form-control">
+                        <option value="">End</option>
+                        <option value="0">Off</option>
+                        <option value="1230">12:30</option>
+                        <option value="1300">13:00</option>
+                        <option value="1330">13:30</option>
+                        <option value="1400">14:00</option>
+                        <option value="1430">14:30</option>
+                        <option value="1500">15:00</option>
+                        <option value="1530">15:30</option>
+                        <option value="1600">16:00</option>
+                        <option value="1630">16:30</option>
+                        <option value="1700">17:00</option>
+                    </select>
+                </td>
+                <td class="fri">
+                    <select name="fri_pm_start" class="form-control">
+                        <option value="">Start</option>
+                        <option value="0">Off</option>
+                        <option value="1200">12:00</option>
+                        <option value="1230">12:30</option>
+                        <option value="1300">13:00</option>
+                        <option value="1330">13:30</option>
+                        <option value="1400">14:00</option>
+                        <option value="1430">14:30</option>
+                        <option value="1500">15:00</option>
+                        <option value="1530">15:30</option>
+                        <option value="1600">16:00</option>
+                        <option value="1630">16:30</option>
+                        <option value="1700">17:00</option>
+                    </select>
+                    <select name="fri_pm_finish" class="form-control">
+                        <option value="">End</option>
+                        <option value="0">Off</option>
+                        <option value="1230">12:30</option>
+                        <option value="1300">13:00</option>
+                        <option value="1330">13:30</option>
+                        <option value="1400">14:00</option>
+                        <option value="1430">14:30</option>
+                        <option value="1500">15:00</option>
+                        <option value="1530">15:30</option>
+                        <option value="1600">16:00</option>
+                        <option value="1630">16:30</option>
+                        <option value="1700">17:00</option>
+                    </select>
+                </td>
+                <td class="sat">
+                    <select name="sat_pm_start" class="form-control">
+                        <option value="">Start</option>
+                        <option value="0">Off</option>
+                        <option value="1200">12:00</option>
+                        <option value="1230">12:30</option>
+                        <option value="1300">13:00</option>
+                        <option value="1330">13:30</option>
+                        <option value="1400">14:00</option>
+                        <option value="1430">14:30</option>
+                        <option value="1500">15:00</option>
+                        <option value="1530">15:30</option>
+                        <option value="1600">16:00</option>
+                        <option value="1630">16:30</option>
+                        <option value="1700">17:00</option>
+                    </select>
+                    <select name="sat_pm_finish" class="form-control">
+                        <option value="">End</option>
+                        <option value="0">Off</option>
+                        <option value="1230">12:30</option>
+                        <option value="1300">13:00</option>
+                        <option value="1330">13:30</option>
+                        <option value="1400">14:00</option>
+                        <option value="1430">14:30</option>
+                        <option value="1500">15:00</option>
+                        <option value="1530">15:30</option>
+                        <option value="1600">16:00</option>
+                        <option value="1630">16:30</option>
+                        <option value="1700">17:00</option>
+                    </select>
+                </td>
+                <td class="sun">
+                    <select name="sun_pm_start" class="form-control">
+                        <option value="">Start</option>
+                        <option value="0">Off</option>
+                        <option value="1200">12:00</option>
+                        <option value="1230">12:30</option>
+                        <option value="1300">13:00</option>
+                        <option value="1330">13:30</option>
+                        <option value="1400">14:00</option>
+                        <option value="1430">14:30</option>
+                        <option value="1500">15:00</option>
+                        <option value="1530">15:30</option>
+                        <option value="1600">16:00</option>
+                        <option value="1630">16:30</option>
+                        <option value="1700">17:00</option>
+                    </select><select name="sun_pm_finish" class="form-control">
+                        <option value="">End</option>
+                        <option value="0">Off</option>
+                        <option value="1230">12:30</option>
+                        <option value="1300">13:00</option>
+                        <option value="1330">13:30</option>
+                        <option value="1400">14:00</option>
+                        <option value="1430">14:30</option>
+                        <option value="1500">15:00</option>
+                        <option value="1530">15:30</option>
+                        <option value="1600">16:00</option>
+                        <option value="1630">16:30</option>
+                        <option value="1700">17:00</option>
+                    </select>
+                </td>
+            </tr>
+        </form>
     </tbody>
 </table>
-<a href="stylesAD/create" class="btn btn-primary btn-lg">
+<a href="javascript:newBarber();" class="btn btn-primary btn-lg" >
     <i class="fa fa-plus"></i> 
     New Staff
 </a>
 
 <script type="text/javascript">
+function newBarber(){
+    $("#barber_new_am").show();
+    $("#barber_new_pm").show();
+}
+
 function editName(id){
     $("#editBtn_" + id).remove();
     $("#barber_" + id + "_name").hide();
@@ -459,8 +872,33 @@ function editName(id){
 }
 
 function manageBarber(type, id){
+    // insert
+    if(type == "I"){
+        if($("#barber_new_am").find("input[name=ba_fname]").val() == "" || $("#barber_new_am").find("input[name=ba_sname]").val() == ""){
+            alert("Please enter the new barber's name");
+            return;
+        }else{
+            if(confirm("Are you sure to register the new staff ?")){
+                $("#barber_new_am").find("select").each(function(idx){
+                    if($("#barber_new_am").find("select").eq(idx).val() == ""){
+                        $("#barber_new_am").find("select").eq(idx).val(0);
+                    }
+                });
+                
+                $("#barber_new_pm").find("select").each(function(idx){
+                    if($("#barber_new_pm").find("select").eq(idx).val() == ""){
+                        $("#barber_new_pm").find("select").eq(idx).val(0);
+                    }
+                });
+        
+                $("#barberForm_new").attr("action", "/admin/staff/insert");
+                
+                $("#barberForm_new").submit();
+            }
+        }
+    }
     // update
-    if(type == "U"){
+    else if(type == "U"){
         if(confirm("Are you sure to update the staff ?")){
             $("#barberForm_" + id).attr("action", "/admin/staff/update/" + id);
             

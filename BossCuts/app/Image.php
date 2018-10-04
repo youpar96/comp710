@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     protected $fillable = [
-        'img_id',
+        'id',
         'img_path',
         'img_visible',
         'img_carousel',

@@ -4,8 +4,21 @@
     <section class="page-section clearfix">
       <div class="container">
         <div class="intro">
-          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{ secure_asset('img/boss_intro2.jpg') }}" alt="">
-          <div class="intro-text left-0 text-center bg-faded p-5 rounded" style="margin-top:20rem;">
+          <div class="carousel slide intro-img img-fluid mb-3 mb-lg-0 rounded" data-ride="carousel">
+            <div class="carousel-inner">
+              @foreach($images as $index => $image)
+              @if($index == 0)
+                <div class="carousel-item active">
+              @else
+                <div class="carousel-item">
+              @endif
+                <img class="d-block rounded" src="{{ secure_asset($image->img_path) }}" alt="" width="800px" height="900px">
+              </div>
+              @endforeach
+            </div>
+          </div>
+          <!--<img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{ secure_asset('img/boss_intro2.jpg') }}" alt="">-->
+          <div class="intro-text left-0 text-center bg-faded p-5 rounded" style="margin-top:10rem;">
             <h2 class="section-heading mb-4">
               <span class="section-heading-upper">Barber Shop</span>
               <span class="section-heading-lower">The Best Barber Shop in Hamilton</span>

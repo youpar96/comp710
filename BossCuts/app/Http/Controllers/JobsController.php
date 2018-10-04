@@ -11,7 +11,7 @@ use Carbon\Carbon;
 class JobsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display the intro screen for the jobs.
      *
      * @return \Illuminate\Http\Response
      */
@@ -19,9 +19,8 @@ class JobsController extends Controller
     {
         return view('jobs.intro');
     }
-
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new job application.
      *
      * @return \Illuminate\Http\Response
      */
@@ -30,7 +29,7 @@ class JobsController extends Controller
         return view('jobs.create');
     }
     /*******************************************
-     * Store a newly created resource in storage.
+     * Store a newly created job application in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -39,23 +38,22 @@ class JobsController extends Controller
     {
         //put the request straight into flash in preparation for any error messages
         $request->flash();
-        /*
-        if ($request->has('j_avail_date')) dd($request->old('j_avail_date'));
-        else dd("dont have availdate");
-        */
+        //
+        //radios and checkboxes need special treatment - so prepare their flash data
+        // worktype is can be one or more of fulltime parttime casual
         $workType = $request->old('work_type');
-        $workDays = $request->old('work_days');
         if($workType !== null) {
             if(in_array('fulltime',$workType)) $request->session()->flash('fulltime', '1');
             if(in_array('parttime',$workType)) $request->session()->flash('parttime', '1');
             if(in_array('casual',$workType)) $request->session()->flash('casual', '1'); 
         }
+        $workDays = $request->old('work_days');
         if($workDays !== null) {
             if(in_array('weekdays',$workDays)) $request->session()->flash('weekdays', '1');
             if(in_array('saturdays',$workDays)) $request->session()->flash('saturdays', '1');
             if(in_array('sundays',$workDays)) $request->session()->flash('sundays', '1'); 
         }
-        
+        //check the uploaded CV and create a filename for it
         if ($request->hasFile('cvUpload') && $request->has('j_fname') && $request->has('j_sname')) {
             $request->validate([
                 'cvUpload' => 'file|max:1024',
@@ -72,7 +70,6 @@ class JobsController extends Controller
             'j_phone' => 'required|min:7|max:20',
             'j_pref_cont_meth'=> 'required|in:txt,phone,email',
             'j_cover_letter' => 'min:2',
-//try later with multi date format    'j_avail_date' => 'date_multi_format:"d/m/Y","d-m-Y":after:Carbon::now()->subDay()',
             'j_avail_date' => 'date_format:d/m/Y|after:today',
             'work_type' => 'required',
             'work_days' => 'required',
@@ -106,6 +103,7 @@ class JobsController extends Controller
             $job['j_cvpath']  = $fileName;
             $request->cvUpload->storeAs('jobAppl',$fileName);   
         }
+        //set up the fields that validator cannot set for us
         if($workType !== null) {
             if(in_array('fulltime',$workType)) $job['j_fulltime'] = true;
             if(in_array('parttime',$workType)) $job['j_parttime'] = true;
@@ -117,7 +115,6 @@ class JobsController extends Controller
             if(in_array('sundays',$workDays)) $job['j_sundays'] = true;
         }
         $job['j_status'] = 'new';
-        //DD($job);
 
         Job::create($job);
         return redirect('jobs')->with('success','We have received your application and will contact you ...');

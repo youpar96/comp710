@@ -14,7 +14,7 @@ class CreateImagesTable extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
-            $table->increments('img_id');
+            $table->increments('id');
             $table->string('img_path');
             $table->boolean('img_visible');
             $table->boolean('img_carousel');

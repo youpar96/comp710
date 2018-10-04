@@ -16,8 +16,8 @@
  ************************************/
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
-    //return view('welcome');
-    return view('main');
+    $images=DB::table('images')->where('img_carousel', 1)->orderByRaw('created_at DESC')->get();
+    return view('main', compact('images'));
 });
 
 //Auth functionality
@@ -54,6 +54,8 @@ Route::get('/admin/home', 'AdminController@admin')  //this is the flash new one
 
 Route::get('/admin/gallery', 'ImageController@indexForAdmin')->name('admin.gallery')->middleware('is_admin');
 Route::post('/admin/gallery/upload', 'ImageController@uploadImages')->middleware('is_admin');
+Route::get('/admin/gallery/update/{id}', 'ImageController@updateImage')->middleware('is_admin');
+Route::get('/admin/gallery/delete/{id}', 'ImageController@deleteImage')->middleware('is_admin');
 
 Route::get('/admin/staff', 'StaffController@indexForAdmin')->name('admin.staff')->middleware('is_admin');
 Route::post('/admin/staff/insert', 'StaffController@insertStaff')->middleware('is_admin');
