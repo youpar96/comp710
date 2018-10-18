@@ -1,0 +1,147 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+
+<!--<div>
+  <label>Please enter your name:</label>
+  <input type="text" [(ngModel)]="testName" placeholder="Enter a name here"><br>
+  <label>Please enter your city:</label>
+  <input type="text" [(ngModel)]="testCity" placeholder="Enter a city here"><br>
+  
+  <h1>Your Name is {{ testName }}</h1>
+  <h1>Your City is {{ testCity }}</h1>
+</div>-->
+
+<hr>
+
+<div class="mx-5">
+  <table style="width:90%;">
+    <colgroup>
+      <col width="50%">
+      <col width="50%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="px-5" style="border-right:solid 2px #dddddd;">
+          <!-- Must use "name" attribute at input tags in a form tag to use "ngModel" -->
+          <form action="#">
+            <div class="form-group">
+              <label for="firstName">First Name: </label>
+              <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="firstName" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name: </label>
+              <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="lastName" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address: </label>
+              <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password: </label>
+              <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </td>
+        <td class="px-2">
+          <table class="table table-bordered">
+            <colgroup>
+              <col width="20%">
+              <col width="20%">
+              <col width="*">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&nbsp;{{ firstName }}</td>
+                <td>&nbsp;{{ lastName }}</td>
+                <td>&nbsp;{{ email }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<hr>
+
+<!-- Week12 - RESTful -->
+<hr>
+<h1>Json - 1</h1>
+<table style="width:90%;">
+  <thead>
+    <tr>
+      <th>Json.a</th>
+      <th>Json.b</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ results1.a }}</td>
+      <td>{{ results1.b }}</td>
+    </tr>
+  </tbody>
+</table>
+<br><hr><br>
+<h1>Json - 2</h1>
+<table style="width:90%;">
+  <thead>
+    <tr>
+      <th>Json.fruit</th>
+      <th>Json.size</th>
+      <th>Json.color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ results2.fruit }}</td>
+      <td>{{ results2.size }}</td>
+      <td>{{ results2.color }}</td>
+    </tr>
+  </tbody>
+</table>
+<br><hr><br>
+
+<h1>Json - 3</h1>
+<div *ngFor="let res of results3">
+	<div *ngIf=" res.name  == 'Spencer Shannon'">
+		<ul>
+			<li>Name: {{res.name}}</li>
+			<li>Age: {{res.age}}</li>
+			<li>Friends: </li>
+			<ul>
+			  <li *ngFor="let friend of res.friends">{{ friend.name }}</li>
+			</ul>
+		</ul>
+	</div>
+</div>
+
+<!-- Week12 - RESTful -->
+
+<!--<br>
+
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul>-->
